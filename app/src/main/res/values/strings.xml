@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FoodApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="search_fragment">Search Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="pending_orders">Pending Orders</string>
+    <string name="confirm_orders">Confirm Orders</string>
+    <string name="preparing_orders">Preparing Orders</string>
+    <string name="ready_orders">Ready Orders</string>
+    <string name="on_the_way">On The Way</string>
+    <string name="completed_orders">Completed Orders</string>
+</resources>
