@@ -11,4 +11,12 @@
     <string name="ready_orders">Ready Orders</string>
     <string name="on_the_way">On The Way</string>
     <string name="completed_orders">Completed Orders</string>
+    <string name="lbl_Reg">Register</string>
+    <string name="lbl_regType">Account type</string>
+    <string name="desc_logo">FoodShow logo</string>
+    <string-array name="regTypes">
+        <item>Customer</item>
+        <item>Restaurant Owner</item>
+        <item>Driver</item>
+    </string-array>
 </resources>
