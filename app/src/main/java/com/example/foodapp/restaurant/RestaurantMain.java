@@ -1,4 +1,4 @@
-package com.example.foodapp;
+package com.example.foodapp.restaurant;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,39 +7,31 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.foodapp.databinding.ActivityMainBinding;
+import com.example.foodapp.R;
+import com.example.foodapp.databinding.RestaurantActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class RestaurantMain extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    RestaurantActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = RestaurantActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
 
-            switch (item.getItemId()){
-
-                case R.id.home:
-                    replaceFragment(new HomeFragment());
-                    break;
-
-                case R.id.search:
-                    replaceFragment(new SearchFragment());
-                    break;
-
-                case R.id.food:
-                    replaceFragment(new FoodFragment());
-                    break;
-
-                case R.id.profile:
-                    replaceFragment(new ProfileFragment());
-                    break;
-            }
+            if(id == R.id.home)
+                replaceFragment(new HomeFragment());
+            else if(id == R.id.search)
+                replaceFragment(new SearchFragment());
+            else if(id == R.id.food)
+                replaceFragment(new FoodFragment());
+            else if(id == R.id.profile)
+                replaceFragment(new ProfileFragment());
 
             return true;
         });

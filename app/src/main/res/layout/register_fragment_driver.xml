@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
-    tools:context=".SearchFragment">
+    android:background="#A58484"
+    tools:context=".register.DriverRegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/search_fragment"
-        android:textSize="26sp"
-        android:layout_gravity="center"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="DriverRegister" />
 
 </FrameLayout>

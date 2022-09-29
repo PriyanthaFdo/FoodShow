@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#973D3D"
-    tools:context=".RestaurantRegisterFragment">
+    tools:context=".register.RestaurantRegisterFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

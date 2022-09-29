@@ -1,4 +1,4 @@
-package com.example.foodapp;
+package com.example.foodapp.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -6,10 +6,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.example.foodapp.R;
 
 public class RegisterMain extends AppCompatActivity {
 
@@ -22,10 +23,10 @@ public class RegisterMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_main);
+        setContentView(R.layout.register_activity_main);
 
 
-        Spinner regTypeSpinner = (Spinner) findViewById(R.id.regTypeSpinner);
+        Spinner regTypeSpinner = findViewById(R.id.regTypeSpinner);
         cusFragment = new CustomerRegisterFragment();
         resFragment = new RestaurantRegisterFragment();
         driFragment = new DriverRegisterFragment();

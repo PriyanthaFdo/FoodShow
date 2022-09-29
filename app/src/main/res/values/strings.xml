@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">FoodApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home_fragment">Home Fragment</string>
-    <string name="search_fragment">Search Fragment</string>
-    <string name="profile_fragment">Profile Fragment</string>
+
     <string name="pending_orders">Pending Orders</string>
     <string name="confirm_orders">Confirm Orders</string>
     <string name="preparing_orders">Preparing Orders</string>
@@ -14,6 +10,14 @@
     <string name="lbl_Reg">Register</string>
     <string name="lbl_regType">Account type</string>
     <string name="desc_logo">FoodShow logo</string>
+    <string name="edt_firstName">First Name</string>
+    <string name="edt_lastName">Last Name</string>
+    <string name="edt_mail">Enter Email</string>
+    <string name="edt_mobile">Enter mobile Number</string>
+    <string name="edt_address">Enter Address</string>
+    <string name="edt_password">Enter Password</string>
+    <string name="edt_confirmPassword">Confirm Password</string>
+    <string name="btn_register">Register</string>
     <string-array name="regTypes">
         <item>Customer</item>
         <item>Restaurant Owner</item>
