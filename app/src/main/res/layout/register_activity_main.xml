@@ -18,7 +18,7 @@
         android:id="@+id/imageView"
         android:layout_width="180dp"
         android:layout_height="140dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/desc_logo"
         android:src="@drawable/logo_nobg_small"
         app:civ_border_color="@color/darkOrange"
@@ -49,6 +49,7 @@
         android:id="@+id/regTypeSpinner"
         android:layout_width="210dp"
         android:layout_height="48dp"
+        android:layout_marginTop="5dp"
         android:contentDescription="@string/lbl_regType"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -61,13 +62,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regTypeSpinner"
         tools:layout="@layout/register_fragment_customer" />
+
+    <Button
+        android:id="@+id/btn_toLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+
+        android:layout_margin="15dp"
+        android:background="@drawable/selector_btn_outline"
+        android:paddingHorizontal="10dp"
+        android:text="@string/btn_login"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegFormFragmentView"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+
+        android:layout_margin="15dp"
+        android:background="@drawable/selector_btn_solid"
+        android:paddingHorizontal="10dp"
+        android:text="@string/btn_register"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegFormFragmentView"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

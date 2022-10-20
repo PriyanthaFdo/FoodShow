@@ -19,8 +19,8 @@
     <string name="edt_address">Enter Address</string>
     <string name="edt_password">Enter Password</string>
     <string name="edt_confirmPassword">Confirm Password</string>
-    <string name="btn_register">Register</string>
-    <string name="btn_login">Log In</string>
+    <string name="btn_register">Sign Up</string>
+    <string name="btn_login">Sign In</string>
     <string name="nav_home">Home</string>
     <string name="nav_search">Search</string>
     <string name="nav_food">Food</string>

@@ -4,17 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import com.example.foodapp.R;
+import com.example.foodapp.login.LoginMain;
 
 public class RegisterMain extends AppCompatActivity {
 
     Spinner regTypeSpinner;
+    Button btn_ToLog;
 
     CustomerRegisterFragment cusFragment;
     RestaurantRegisterFragment resFragment;
@@ -27,6 +31,8 @@ public class RegisterMain extends AppCompatActivity {
 
 
         regTypeSpinner = findViewById(R.id.regTypeSpinner);
+        btn_ToLog = findViewById(R.id.btn_toLogin);
+
         cusFragment = new CustomerRegisterFragment();
         resFragment = new RestaurantRegisterFragment();
         driFragment = new DriverRegisterFragment();
@@ -35,6 +41,11 @@ public class RegisterMain extends AppCompatActivity {
         ArrayAdapter<String> regTypeAdapter = new ArrayAdapter<>(RegisterMain.this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.regTypes));
         regTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         regTypeSpinner.setAdapter(regTypeAdapter);
+
+        btn_ToLog.setOnClickListener(view ->  {
+            Intent i = new Intent(view.getContext(), LoginMain.class);
+            startActivity(i);
+        });
 
         regTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -50,13 +61,11 @@ public class RegisterMain extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+            public void onNothingSelected(AdapterView<?> adapterView) {}
         });
     }
 
-    public void setFragment(Fragment fragment){
+    private void setFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.RegFormFragmentView, fragment);
         fragmentTransaction.commit();

@@ -134,40 +134,4 @@
         android:textColorHint="@color/gray"
         tools:ignore="TextContrastCheck" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginVertical="5dp"
-
-            android:background="@drawable/login_register_secondary_btn"
-            android:paddingHorizontal="10dp"
-            android:text="@string/btn_login"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:textColor="@color/black"
-
-            android:layout_marginVertical="5dp"
-            android:background="@drawable/register_btn"
-            android:paddingHorizontal="10dp"
-            android:text="@string/btn_register"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
-    </RelativeLayout>
-
-
 </LinearLayout>
