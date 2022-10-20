@@ -11,7 +11,6 @@ import com.example.foodapp.R;
 import com.example.foodapp.databinding.RestaurantActivityMainBinding;
 
 public class RestaurantMain extends AppCompatActivity {
-
     RestaurantActivityMainBinding binding;
 
     @Override
@@ -24,13 +23,13 @@ public class RestaurantMain extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
-            if(id == R.id.home)
+            if(id == R.id.resNav_home)
                 replaceFragment(new HomeFragment());
-            else if(id == R.id.search)
+            else if(id == R.id.resNav_search)
                 replaceFragment(new SearchFragment());
-            else if(id == R.id.food)
+            else if(id == R.id.resNev_food)
                 replaceFragment(new FoodFragment());
-            else if(id == R.id.profile)
+            else if(id == R.id.resNav_pulse)
                 replaceFragment(new ProfileFragment());
 
             return true;

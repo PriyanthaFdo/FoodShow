@@ -41,4 +41,8 @@ dependencies {
 
     //CircularImageView
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
+
+    //recyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.recyclerview:recyclerview-selection:1.1.0'
 }

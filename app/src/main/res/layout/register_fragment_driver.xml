@@ -1,15 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A58484"
+    android:orientation="vertical"
     tools:context=".register.DriverRegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="DriverRegister" />
+    <EditText
+        android:id="@+id/edt_reg_del_name"
+        android:autofillHints="name"
+        android:hint="@string/edt_reg_rest_deliverymanName"
+        android:drawableStart="@drawable/ic_name"
+        android:inputType="textPersonName"
 
-</FrameLayout>
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/register_edt_background"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck"/>
+
+    <EditText
+        android:id="@+id/edt_reg_del_mobile"
+        android:autofillHints="phone"
+        android:hint="@string/edt_mobile"
+        android:drawableStart="@drawable/ic_mobile"
+        android:inputType="phone"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/register_edt_background"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck"/>
+
+    <EditText
+        android:id="@+id/edt_reg_del_mail"
+        android:autofillHints="emailAddress"
+        android:hint="@string/edt_mail"
+        android:drawableStart="@drawable/ic_mail"
+        android:inputType="textEmailAddress"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/register_edt_background"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck"/>
+
+    <EditText
+        android:id="@+id/edt_reg_del_pass"
+        android:autofillHints="password"
+        android:hint="@string/edt_password"
+        android:drawableStart="@drawable/ic_password"
+        android:inputType="textPassword"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/register_edt_background"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck"/>
+
+    <EditText
+        android:id="@+id/edt_reg_del_confirmPass"
+        android:autofillHints="password"
+        android:hint="@string/edt_confirmPassword"
+        android:drawableStart="@drawable/ic_password"
+        android:inputType="textPassword"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/register_edt_background"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginVertical="5dp"
+
+            android:background="@drawable/login_register_secondary_btn"
+            android:paddingHorizontal="10dp"
+            android:text="@string/btn_login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/black"
+
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/register_btn"
+            android:paddingHorizontal="10dp"
+            android:text="@string/btn_register"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+    </RelativeLayout>
+
+</LinearLayout>
