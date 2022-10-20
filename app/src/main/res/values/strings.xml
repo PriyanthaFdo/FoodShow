@@ -10,6 +10,7 @@
     <string name="completed_orders">Completed Orders</string>
 
     <string name="lbl_Reg">Register</string>
+    <string name="lbl_Log">Login</string>
     <string name="lbl_regType">Account type</string>
     <string name="edt_firstName">First Name</string>
     <string name="edt_lastName">Last Name</string>
@@ -19,12 +20,18 @@
     <string name="edt_password">Enter Password</string>
     <string name="edt_confirmPassword">Confirm Password</string>
     <string name="btn_register">Register</string>
-    <string name="btn_login">Sign In</string>
+    <string name="btn_login">Log In</string>
     <string name="nav_home">Home</string>
     <string name="nav_search">Search</string>
     <string name="nav_food">Food</string>
     <string name="nav_profile">Profile</string>
     <string name="edt_reg_rest_restaurantName">Enter Restaurant Name</string>
     <string name="edt_reg_rest_deliverymanName">Enter Deliveryman Name</string>
+
+    <string-array name="regTypes">
+        <item>Customer</item>
+        <item>Restaurant Owner</item>
+        <item>Driver</item>
+    </string-array>
 
 </resources>

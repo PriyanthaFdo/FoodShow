@@ -26,7 +26,7 @@ public class RegisterMain extends AppCompatActivity {
         setContentView(R.layout.register_activity_main);
 
 
-        Spinner regTypeSpinner = findViewById(R.id.regTypeSpinner);
+        regTypeSpinner = findViewById(R.id.regTypeSpinner);
         cusFragment = new CustomerRegisterFragment();
         resFragment = new RestaurantRegisterFragment();
         driFragment = new DriverRegisterFragment();
