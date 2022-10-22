@@ -86,11 +86,11 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="25dp"
                 android:backgroundTint="@color/white"
+                android:contentDescription="@string/completed_orders"
+                android:text="completed_orders"
                 android:textColor="@color/black"
-                android:text="@string/completed_orders"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                tools:ignore="TextContrastCheck" />
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

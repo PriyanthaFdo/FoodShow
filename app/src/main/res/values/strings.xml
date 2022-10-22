@@ -11,4 +11,27 @@
     <string name="ready_orders">Ready Orders</string>
     <string name="on_the_way">On The Way</string>
     <string name="completed_orders">Completed Orders</string>
+    <string name="oid">OID</string>
+    <string name="welcome">Welcome</string>
+    <string name="todo">TODO</string>
+    <string name="Icon">TODO</string>
+    <string name="search">Search</string>
+    <string name="order_id">Order ID :</string>
+    <string name="search_by_order_id">Search By Order ID</string>
+    <string name="total_amount">Total Amount :</string>
+    <string name="order_status">Order Status :</string>
+    <string name="date">Date :</string>
+    <string name="name">Name :</string>
+    <string name="food_items">Food Items</string>
+    <string name="quantity">Quantity</string>
+    <string name="Food_Name">Burger</string>
+    <string name="Food_qty">1</string>
+    <string name="edit">edit</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="restaurant_address">Restaurant Address</string>
+    <string name="email_address">Email Address</string>
+    <string name="telephone_number">Telephone Number</string>
+    <string name="restaurant_id">Restaurant ID :</string>
+    <string name="backgroundimage">BackgroundImage</string>
+    <string name="profileimage">ProfileImage</string>
 </resources>
