@@ -69,38 +69,5 @@
         app:layout_constraintTop_toBottomOf="@+id/regTypeSpinner"
         tools:layout="@layout/register_fragment_customer" />
 
-    <Button
-        android:id="@+id/btn_toLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-
-        android:layout_margin="15dp"
-        android:background="@drawable/selector_btn_outline"
-        android:paddingHorizontal="10dp"
-        android:text="@string/btn_login"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegFormFragmentView"
-        tools:ignore="TextContrastCheck,TextContrastCheck" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-
-        android:layout_margin="15dp"
-        android:background="@drawable/selector_btn_solid"
-        android:paddingHorizontal="10dp"
-        android:text="@string/btn_register"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegFormFragmentView"
-        tools:ignore="TextContrastCheck,TextContrastCheck" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

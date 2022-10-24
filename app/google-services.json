@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "670061319005",
+    "firebase_url": "https://foodshow-120b6-default-rtdb.firebaseio.com",
+    "project_id": "foodshow-120b6",
+    "storage_bucket": "foodshow-120b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670061319005:android:c1de078bf4ab4ef7a5ceb4",
+        "android_client_info": {
+          "package_name": "com.example.foodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670061319005-76q7snjfd5ie8e9bpliph28tulih0ela.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrdLVD1sn_aeJdKjDpzU5oOTGQpDoQ06s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670061319005-76q7snjfd5ie8e9bpliph28tulih0ela.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

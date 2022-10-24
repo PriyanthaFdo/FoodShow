@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.foodapp.R;
 import com.example.foodapp.login.LoginMain;
@@ -18,8 +19,6 @@ import com.example.foodapp.login.LoginMain;
 public class RegisterMain extends AppCompatActivity {
 
     Spinner regTypeSpinner;
-    Button btn_ToLog;
-
     CustomerRegisterFragment cusFragment;
     RestaurantRegisterFragment resFragment;
     DriverRegisterFragment driFragment;
@@ -31,7 +30,6 @@ public class RegisterMain extends AppCompatActivity {
 
 
         regTypeSpinner = findViewById(R.id.regTypeSpinner);
-        btn_ToLog = findViewById(R.id.btn_toLogin);
 
         cusFragment = new CustomerRegisterFragment();
         resFragment = new RestaurantRegisterFragment();
@@ -41,11 +39,6 @@ public class RegisterMain extends AppCompatActivity {
         ArrayAdapter<String> regTypeAdapter = new ArrayAdapter<>(RegisterMain.this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.regTypes));
         regTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         regTypeSpinner.setAdapter(regTypeAdapter);
-
-        btn_ToLog.setOnClickListener(view ->  {
-            Intent i = new Intent(view.getContext(), LoginMain.class);
-            startActivity(i);
-        });
 
         regTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -63,6 +56,7 @@ public class RegisterMain extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {}
         });
+
     }
 
     private void setFragment(Fragment fragment){

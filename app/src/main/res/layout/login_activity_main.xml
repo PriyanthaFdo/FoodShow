@@ -121,7 +121,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_reg_signUp"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
