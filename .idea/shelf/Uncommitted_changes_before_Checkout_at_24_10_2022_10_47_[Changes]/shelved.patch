@@ -1,0 +1,41 @@
+Index: app/src/main/java/com/example/foodapp/register/RestaurantRegisterFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.foodapp.register;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\n\r\nimport androidx.fragment.app.Fragment;\r\n\r\nimport android.text.TextUtils;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.Toast;\r\n\r\nimport com.example.foodapp.R;\r\nimport com.example.foodapp.accounts.Restaurant;\r\nimport com.example.foodapp.login.LoginMain;\r\nimport com.example.foodapp.restaurant.RestaurantMain;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\n\r\npublic class RestaurantRegisterFragment extends Fragment {\r\n    EditText shopName, email, address, mobileNumber, password, confirmPassword;\r\n    Button btn_ToSignIn, btn_register;\r\n    Restaurant restaurant;\r\n\r\n    final DatabaseReference DB = FirebaseDatabase.getInstance().getReference().child(\"Restaurant\");\r\n\r\n    @Override\r\n    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {\r\n        View view =  inflater.inflate(R.layout.register_fragment_restaurant, container, false);\r\n\r\n        shopName = view.findViewById(R.id.edt_reg_rest_name);\r\n        email = view.findViewById(R.id.edt_reg_rest_mail);\r\n        address = view.findViewById(R.id.edt_reg_rest_address);\r\n        mobileNumber = view.findViewById(R.id.edt_reg_rest_mobile);\r\n        password = view.findViewById(R.id.edt_reg_rest_password);\r\n        confirmPassword = view.findViewById(R.id.edt_reg_rest_confirmPass);\r\n        btn_ToSignIn = view.findViewById(R.id.btn_toLogin);\r\n        btn_register = view.findViewById(R.id.btn_reg_signUp);\r\n\r\n        restaurant = new Restaurant();\r\n\r\n        btn_ToSignIn.setOnClickListener(v -> {\r\n            Intent i = new Intent(v.getContext(), LoginMain.class);\r\n            startActivity(i);\r\n        });\r\n\r\n        return view;\r\n    }\r\n\r\n    private int saveDataToDB(){\r\n        int success = 0;\r\n        try{\r\n            if(TextUtils.isEmpty(shopName.getText().toString()))\r\n                Toast.makeText(getActivity(), \"Please Enter Name\", Toast.LENGTH_SHORT).show();\r\n            else if(TextUtils.isEmpty(email.getText().toString()))\r\n                Toast.makeText(getActivity(), \"Please Enter Email\", Toast.LENGTH_SHORT).show();\r\n            else if(TextUtils.isEmpty(address.getText().toString()))\r\n                Toast.makeText(getActivity(), \"Please Enter Address\", Toast.LENGTH_SHORT).show();\r\n            else if(TextUtils.isEmpty(mobileNumber.getText().toString()))\r\n                Toast.makeText(getActivity(), \"Please Enter Mobile Number\", Toast.LENGTH_SHORT).show();\r\n            else if(TextUtils.isEmpty(password.getText().toString()))\r\n                Toast.makeText(getActivity(), \"Please Enter Password\", Toast.LENGTH_SHORT).show();\r\n            else if(TextUtils.isEmpty(confirmPassword.getText().toString()))\r\n                Toast.makeText(getActivity(), \"Please Enter Confirm Password\", Toast.LENGTH_SHORT).show();\r\n            else if(TextUtils.isEmpty(password.getText().toString()) != TextUtils.isEmpty(confirmPassword.getText().toString())) {\r\n                Toast.makeText(getActivity(), \"Password mismatch! Try again!\", Toast.LENGTH_SHORT).show();\r\n                password.setText(\"\");\r\n                confirmPassword.setText(\"\");\r\n            }\r\n            else{\r\n                restaurant.setName(shopName.getText().toString().trim());\r\n                restaurant.setEmail(email.getText().toString().trim());\r\n                restaurant.setAddress(address.getText().toString().trim());\r\n                restaurant.setMobile(mobileNumber.getText().toString().trim());\r\n                restaurant.setPassword(password.getText().toString().trim());\r\n\r\n                DB.child(restaurant.getMobile()).setValue(restaurant);\r\n\r\n                success = 1;\r\n            }\r\n        }catch (NumberFormatException e){\r\n            Toast.makeText(getActivity(), \"Invalid Contact Number\", Toast.LENGTH_SHORT).show();\r\n        }\r\n\r\n        return success;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/foodapp/register/RestaurantRegisterFragment.java b/app/src/main/java/com/example/foodapp/register/RestaurantRegisterFragment.java
+--- a/app/src/main/java/com/example/foodapp/register/RestaurantRegisterFragment.java	
++++ b/app/src/main/java/com/example/foodapp/register/RestaurantRegisterFragment.java	
+@@ -16,6 +16,7 @@
+ import com.example.foodapp.R;
+ import com.example.foodapp.accounts.Restaurant;
+ import com.example.foodapp.login.LoginMain;
++import com.example.foodapp.restaurant.HomeFragment;
+ import com.example.foodapp.restaurant.RestaurantMain;
+ import com.google.firebase.database.DatabaseReference;
+ import com.google.firebase.database.FirebaseDatabase;
+@@ -47,6 +48,13 @@
+             startActivity(i);
+         });
+ 
++        btn_register.setOnClickListener(view1 -> {
++            if(saveDataToDB() == 1){
++                Intent i = new Intent(view1.getContext(), RestaurantMain.class);
++                startActivity(i);
++            }
++        });
++
+         return view;
+     }
+ 
+@@ -65,7 +73,7 @@
+                 Toast.makeText(getActivity(), "Please Enter Password", Toast.LENGTH_SHORT).show();
+             else if(TextUtils.isEmpty(confirmPassword.getText().toString()))
+                 Toast.makeText(getActivity(), "Please Enter Confirm Password", Toast.LENGTH_SHORT).show();
+-            else if(TextUtils.isEmpty(password.getText().toString()) != TextUtils.isEmpty(confirmPassword.getText().toString())) {
++            else if(password.getText().toString() != confirmPassword.getText().toString()) {
+                 Toast.makeText(getActivity(), "Password mismatch! Try again!", Toast.LENGTH_SHORT).show();
+                 password.setText("");
+                 confirmPassword.setText("");

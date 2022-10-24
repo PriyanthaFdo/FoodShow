@@ -21,4 +21,5 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:statusBarColor">@color/darkOrange</item>
     </style>
+
 </resources>

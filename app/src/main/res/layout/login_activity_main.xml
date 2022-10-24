@@ -63,7 +63,7 @@
 
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/register_edt_background"
+        android:background="@drawable/style_edt"
         android:drawableStart="@drawable/ic_mobile"
         android:drawablePadding="10dp"
         android:drawableTint="@color/gray"
@@ -88,7 +88,7 @@
 
         android:layout_weight="0"
         android:autofillHints="password"
-        android:background="@drawable/register_edt_background"
+        android:background="@drawable/style_edt"
         android:drawableStart="@drawable/ic_password"
         android:drawablePadding="10dp"
         android:drawableTint="@color/gray"

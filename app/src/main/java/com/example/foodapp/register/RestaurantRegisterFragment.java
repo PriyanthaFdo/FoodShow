@@ -40,11 +40,19 @@ public class RestaurantRegisterFragment extends Fragment {
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
         btn_register = view.findViewById(R.id.btn_reg_signUp);
 
+
         restaurant = new Restaurant();
 
         btn_ToSignIn.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), LoginMain.class);
             startActivity(i);
+        });
+
+        btn_register.setOnClickListener(v -> {
+            if(saveDataToDB() == 1){
+                Intent i = new Intent(v.getContext(), RestaurantMain.class);
+                startActivity(i);
+            }
         });
 
         return view;
@@ -65,7 +73,7 @@ public class RestaurantRegisterFragment extends Fragment {
                 Toast.makeText(getActivity(), "Please Enter Password", Toast.LENGTH_SHORT).show();
             else if(TextUtils.isEmpty(confirmPassword.getText().toString()))
                 Toast.makeText(getActivity(), "Please Enter Confirm Password", Toast.LENGTH_SHORT).show();
-            else if(TextUtils.isEmpty(password.getText().toString()) != TextUtils.isEmpty(confirmPassword.getText().toString())) {
+            else if(!password.getText().toString().contentEquals(confirmPassword.getText().toString())) {
                 Toast.makeText(getActivity(), "Password mismatch! Try again!", Toast.LENGTH_SHORT).show();
                 password.setText("");
                 confirmPassword.setText("");

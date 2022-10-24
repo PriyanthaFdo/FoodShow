@@ -30,8 +30,8 @@
 
     <string-array name="regTypes">
         <item>Customer</item>
-        <item>Restaurant Owner</item>
-        <item>Driver</item>
+        <item>Restaurant</item>
+        <item>Deliveryman</item>
     </string-array>
 
 </resources>
