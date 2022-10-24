@@ -8,7 +8,7 @@
     tools:context=".register.CustomerRegisterFragment">
 
     <EditText
-        android:id="@+id/edt_FirstName"
+        android:id="@+id/edt_reg_cus_FirstName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -27,7 +27,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/edt_LastName"
+        android:id="@+id/edt_reg_cus_LastName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -46,7 +46,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/edt_mail"
+        android:id="@+id/edt_reg_cus_mail"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -64,7 +64,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/edt_mobile"
+        android:id="@+id/edt_reg_cus_mobile"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -82,7 +82,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/edt_address"
+        android:id="@+id/edt_reg_cus_address"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -100,7 +100,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/edt_password"
+        android:id="@+id/edt_reg_cus_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"
@@ -118,7 +118,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/edt_conformPassword"
+        android:id="@+id/edt_reg_cus_conformPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="10dp"

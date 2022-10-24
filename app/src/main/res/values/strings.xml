@@ -21,10 +21,13 @@
     <string name="edt_confirmPassword">Confirm Password</string>
     <string name="btn_register">Sign Up</string>
     <string name="btn_login">Sign In</string>
+
     <string name="nav_home">Home</string>
     <string name="nav_search">Search</string>
     <string name="nav_food">Food</string>
     <string name="nav_profile">Profile</string>
+    <string name="nav_cart">Shopping Cart</string>
+
     <string name="edt_reg_rest_restaurantName">Enter Restaurant Name</string>
     <string name="edt_reg_rest_deliverymanName">Enter Deliveryman Name</string>
 
@@ -33,5 +36,7 @@
         <item>Restaurant</item>
         <item>Deliveryman</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

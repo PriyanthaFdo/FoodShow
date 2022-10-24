@@ -4,28 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".deliverer.DeliveryMain"
+    tools:context=".customer.CustomerMain"
     android:background="@drawable/background_gradient">
 
     <FrameLayout
-        android:id="@+id/delivery_frame_layout"
+        android:id="@+id/customer_frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/delivery_bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/customer_bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/delivery_bottomNavigationView"
+        android:id="@+id/customer_bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/deliverer_bottom_navigation"
+        app:menu="@menu/customer_bottom_navbadr"
         app:backgroundTint="@color/orange"
         app:itemTextColor="@color/white"
-        app:itemIconTint="@color/white"/>
+        app:itemIconTint="@color/white" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

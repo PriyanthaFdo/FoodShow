@@ -31,6 +31,7 @@ public class DeliveryMain extends AppCompatActivity {
             return true;
         });
     }
+    
     private void replaceDeliveryFragment(Fragment fragment){
 
         FragmentManager fragmentManager = getSupportFragmentManager();

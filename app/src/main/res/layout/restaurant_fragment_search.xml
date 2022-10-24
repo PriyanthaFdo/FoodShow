@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="search"
+        android:text="restaurant search"
         android:textSize="26sp" />
 
 </FrameLayout>

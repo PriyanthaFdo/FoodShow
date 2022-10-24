@@ -3,9 +3,13 @@
 
     <item android:title="@string/nav_home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/driNav_home" />
+        android:id="@+id/cusNav_home"/>
+
+    <item android:title="@string/nav_cart"
+        android:icon="@drawable/ic_shopping_cart"
+        android:id="@+id/cusNav_cart"/>
 
     <item android:title="@string/nav_profile"
         android:icon="@drawable/ic_baseline_account_circle_24"
-        android:id="@+id/driNav_profile" />
+        android:id="@+id/cusNav_profile"/>
 </menu>
