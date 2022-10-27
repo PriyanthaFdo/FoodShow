@@ -48,5 +48,6 @@
     <string name="img_profileImage">Profile Image</string>
     <string name="btn_next">Next</string>
     <string name="btn_skip">Skip</string>
+    <string name="btn_logout">Logout</string>
 
 </resources>
