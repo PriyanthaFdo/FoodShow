@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.foodapp.R;
 import com.example.foodapp.login.LoginMain;
@@ -26,6 +27,7 @@ public class ProfileFragment extends Fragment {
         btn_logout.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(v.getContext(), LoginMain.class));
+            Toast.makeText(getContext(), "Logged out!", Toast.LENGTH_SHORT).show();
             getActivity().finish();
         });
 
