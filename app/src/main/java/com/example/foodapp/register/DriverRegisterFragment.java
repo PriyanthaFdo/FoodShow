@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DriverRegisterFragment extends Fragment {
     EditText edt_name, edt_mobile, edt_email, edt_password, edt_confirmPassword;
-    Button btn_ToSignIn, btn_register;
+    Button btn_ToSignIn, btn_next;
     Deliveryman deliveryman;
 
     final DatabaseReference DB = FirebaseDatabase.getInstance().getReference().child("Deliveryman");
@@ -37,7 +37,7 @@ public class DriverRegisterFragment extends Fragment {
         edt_password = view.findViewById(R.id.edt_reg_del_pass);
         edt_confirmPassword = view.findViewById(R.id.edt_reg_del_confirmPass);
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
-        btn_register = view.findViewById(R.id.btn_reg_signUp);
+        btn_next = view.findViewById(R.id.btn_next);
 
         deliveryman = new Deliveryman();
 
@@ -46,9 +46,10 @@ public class DriverRegisterFragment extends Fragment {
             startActivity(i);
         });
 
-        btn_register.setOnClickListener(v ->{
+        btn_next.setOnClickListener(v ->{
             if(sendDataToDB() == 1){
-                Intent i = new Intent(v.getContext(), DeliveryMain.class);
+                Intent i = new Intent(v.getContext(), UploadImage.class);
+                i.putExtra("id",edt_mobile.getText().toString());
                 startActivity(i);
             }
         });

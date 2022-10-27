@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.foodapp.R;
 import com.example.foodapp.accounts.Customer;
 import com.example.foodapp.customer.CustomerMain;
-import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.login.LoginMain;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -40,7 +39,7 @@ public class CustomerRegisterFragment extends Fragment {
         edt_pass = view.findViewById(R.id.edt_reg_cus_password);
         edt_conPass = view.findViewById(R.id.edt_reg_cus_conformPassword);
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
-        btn_register = view.findViewById(R.id.btn_reg_signUp);
+        btn_register = view.findViewById(R.id.btn_next);
 
         customer = new Customer();
 
