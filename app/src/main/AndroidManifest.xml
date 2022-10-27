@@ -13,6 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodApp"
         tools:targetApi="31">
+
+        <activity
+            android:name=".deliverer.DeliveryMain"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".customer.CustomerMain"
             android:exported="true">
@@ -32,11 +43,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".register.RegisterMain"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".restaurant.RestaurantMain" />
-        <activity android:name=".deliverer.DeliveryMain" />
+
     </application>
 
 </manifest>
