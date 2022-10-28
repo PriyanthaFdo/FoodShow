@@ -15,13 +15,14 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Restaurant;
-import com.example.foodapp.customer.CustomerMain;
+import com.example.foodapp.classes.Restaurant;
 import com.example.foodapp.login.LoginMain;
 import com.example.foodapp.restaurant.RestaurantMain;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class RestaurantRegisterFragment extends Fragment {
     EditText shopName, email, address, mobileNumber, password, confirmPassword;
@@ -44,7 +45,7 @@ public class RestaurantRegisterFragment extends Fragment {
         confirmPassword = view.findViewById(R.id.edt_reg_rest_confirmPass);
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
         btn_register = view.findViewById(R.id.btn_next);
-        progressBar = getActivity().findViewById(R.id.progressBar);
+        progressBar = requireActivity().findViewById(R.id.progressBar);
 
         restaurant = new Restaurant();
         firebaseAuth = FirebaseAuth.getInstance();

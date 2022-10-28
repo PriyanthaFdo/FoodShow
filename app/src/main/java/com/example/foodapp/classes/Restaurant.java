@@ -1,4 +1,4 @@
-package com.example.foodapp.accounts;
+package com.example.foodapp.classes;
 
 public class Restaurant {
     private String uid;

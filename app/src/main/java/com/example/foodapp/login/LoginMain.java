@@ -15,23 +15,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Customer;
-import com.example.foodapp.accounts.Restaurant;
 import com.example.foodapp.customer.CustomerMain;
 import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.register.RegisterMain;
 import com.example.foodapp.restaurant.RestaurantMain;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.sql.Driver;
 
 public class LoginMain extends AppCompatActivity {
 

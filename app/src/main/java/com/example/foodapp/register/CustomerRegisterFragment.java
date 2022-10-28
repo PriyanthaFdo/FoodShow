@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Customer;
+import com.example.foodapp.classes.Customer;
 import com.example.foodapp.customer.CustomerMain;
 import com.example.foodapp.login.LoginMain;
 import com.google.firebase.auth.FirebaseAuth;

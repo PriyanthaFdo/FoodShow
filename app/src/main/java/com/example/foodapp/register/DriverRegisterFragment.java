@@ -15,13 +15,13 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Deliveryman;
-import com.example.foodapp.customer.CustomerMain;
-import com.example.foodapp.deliverer.DeliveryMain;
+import com.example.foodapp.classes.Deliveryman;
 import com.example.foodapp.login.LoginMain;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 public class DriverRegisterFragment extends Fragment {
     EditText edt_name, edt_mobile, edt_email, edt_password, edt_confirmPassword;
@@ -43,7 +43,7 @@ public class DriverRegisterFragment extends Fragment {
         edt_confirmPassword = view.findViewById(R.id.edt_reg_del_confirmPass);
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
         btn_next = view.findViewById(R.id.btn_next);
-        progressBar = getActivity().findViewById(R.id.progressBar);
+        progressBar = requireActivity().findViewById(R.id.progressBar);
 
         deliveryman = new Deliveryman();
         firebaseAuth = FirebaseAuth.getInstance();
