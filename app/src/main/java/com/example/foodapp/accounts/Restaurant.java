@@ -1,6 +1,7 @@
 package com.example.foodapp.accounts;
 
 public class Restaurant {
+    private String uid;
     private String name;
     private String email;
     private String Address;
@@ -8,8 +9,15 @@ public class Restaurant {
     ///////
     static private String mobile;
     private String password;
+    private final String role ="Restaurant";
 
     public Restaurant(){}
+
+    public String getUid() { return uid; }
+
+    public void setUid(String uid) { this.uid = uid; }
+
+    public String getRole() { return role; }
 
     public String getName() {
         return name;
