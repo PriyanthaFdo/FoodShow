@@ -49,7 +49,6 @@ public class CustomerRegisterFragment extends Fragment {
         customer = new Customer();
         fAuth = FirebaseAuth.getInstance();
 
-
         btn_ToSignIn.setOnClickListener(v -> {
             Intent i = new Intent(v.getContext(), LoginMain.class);
             startActivity(i);
@@ -134,8 +133,9 @@ public class CustomerRegisterFragment extends Fragment {
             //store data in firebase authentication
             fAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
+                    customer.setUid(fAuth.getCurrentUser().getUid());
                     //store data in realtime database
-                    DB.child(customer.getMobile()).setValue(customer);
+                    DB.child(customer.getUid()).setValue(customer);
 
                     Toast.makeText(getContext(), "Customer Account Created", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(view.getContext(), CustomerMain.class));

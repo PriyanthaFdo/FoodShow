@@ -1,12 +1,20 @@
 package com.example.foodapp.accounts;
 
 public class Deliveryman {
+    private String Uid;
     private String name;
     private String mobile;
     private String email;
     private String password;
+    private final String role = "Deliveryman";
 
     public  Deliveryman(){}
+
+    public String getUid() { return Uid; }
+
+    public void setUid(String uid) { Uid = uid; }
+
+    public String getRole() { return role; }
 
     public String getName() {
         return name;

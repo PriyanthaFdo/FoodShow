@@ -15,12 +15,23 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
+import com.example.foodapp.accounts.Customer;
+import com.example.foodapp.accounts.Restaurant;
 import com.example.foodapp.customer.CustomerMain;
+import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.register.RegisterMain;
+import com.example.foodapp.restaurant.RestaurantMain;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.sql.Driver;
 
 public class LoginMain extends AppCompatActivity {
 
@@ -29,6 +40,8 @@ public class LoginMain extends AppCompatActivity {
     EditText edt_mail, edt_pass;
     ProgressBar progressBar;
     FirebaseAuth firebaseAuth;
+    DatabaseReference db;
+    String role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,7 @@ public class LoginMain extends AppCompatActivity {
         edt_pass = findViewById(R.id.edt_login_pass);
         progressBar = findViewById(R.id.login_progressbar);
         firebaseAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance().getReference();
 
         btn_login.setOnClickListener(v -> {
             String mail = edt_mail.getText().toString().trim();
@@ -64,10 +78,78 @@ public class LoginMain extends AppCompatActivity {
 
             firebaseAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
-                    Toast.makeText(LoginMain.this, "Successfuly Logged In!", Toast.LENGTH_SHORT).show();
-                    if(TextUtils.equals(type, "Customer")) {
-                        startActivity(new Intent(getApplicationContext(), CustomerMain.class));
-                        finish();
+                    switch (type){
+                        case "Customer":{
+                            DatabaseReference dbCus = db.child("Customer");
+
+                            dbCus.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.hasChild(firebaseAuth.getCurrentUser().getUid())){
+                                        Toast.makeText(LoginMain.this, "Customer Login Successful!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), CustomerMain.class));
+                                        finish();
+                                    }
+                                    else{
+                                        Toast.makeText(LoginMain.this, "Customer Login Failed!", Toast.LENGTH_SHORT).show();
+                                        FirebaseAuth.getInstance().signOut();
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {}
+                            });
+                            break;
+                        }
+
+                        case "Restaurant":{
+                            DatabaseReference dbCus = db.child("Restaurant");
+
+                            dbCus.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.hasChild(firebaseAuth.getCurrentUser().getUid())){
+                                        Toast.makeText(LoginMain.this, "Restaurant Login Successful!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), RestaurantMain.class));
+                                        finish();
+                                    }
+                                    else{
+                                        Toast.makeText(LoginMain.this, "Restaurant Login Failed!", Toast.LENGTH_SHORT).show();
+                                        FirebaseAuth.getInstance().signOut();
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {}
+                            });
+                            break;
+                        }
+
+                        case "Deliveryman":{
+                            DatabaseReference dbCus = db.child("Deliveryman");
+
+                            dbCus.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if(snapshot.hasChild(firebaseAuth.getCurrentUser().getUid())){
+                                        Toast.makeText(LoginMain.this, "Deliveryman Login Successful!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), DeliveryMain.class));
+                                        finish();
+                                    }
+                                    else{
+                                        Toast.makeText(LoginMain.this, "Deliveryman Login Failed!", Toast.LENGTH_SHORT).show();
+                                        FirebaseAuth.getInstance().signOut();
+                                        progressBar.setVisibility(View.INVISIBLE);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {}
+                            });
+                            break;
+                        }
                     }
                 }
                 else {
