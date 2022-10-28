@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.foodapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,12 +25,7 @@ public class FoodFragment extends Fragment {
 
         floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(),AddActivity.class));
-            }
-        });
+        floatingActionButton.setOnClickListener(view1 -> startActivity(new Intent(getContext(), AddFoodActivity.class)));
 
 
 

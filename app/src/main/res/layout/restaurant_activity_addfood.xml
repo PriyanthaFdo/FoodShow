@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".restaurant.AddActivity">
+    tools:context=".restaurant.AddFoodActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:text="Add Food Items"
+        android:text="@string/add_food_items"
         android:background="@color/purple_500"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:gravity="center"
         android:textColor="#FFF"/>
 
@@ -23,7 +22,7 @@
         android:textSize="30sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Name" />
+        android:text="@string/name" />
 
     <EditText
         android:id="@+id/foodName"
@@ -31,7 +30,10 @@
         android:layout_height="64dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:gravity="center" />
+        android:autofillHints="name"
+        android:gravity="center"
+        android:hint="@string/item_name"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="match_parent"
@@ -40,18 +42,18 @@
         android:textSize="30sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Price"/>
+        android:text="@string/price"/>
 
     <EditText
+        android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="center"
-        android:id="@+id/price"/>
-
-
-
+        android:hint="@string/enter_price"
+        android:inputType="number"
+        android:autofillHints="price" />
 
 
     <Button
@@ -62,9 +64,10 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
         android:gravity="center"
-        android:text="Uploard Image"
+        android:text="@string/upload_image"
         android:textAllCaps="false"
-        android:textSize="24dp" />
+        android:textSize="24sp"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/btnBack"
@@ -76,8 +79,9 @@
         android:layout_marginRight="25dp"
         android:backgroundTint="#EF6FB5"
         android:gravity="center"
-        android:text="Back"
+        android:text="@string/back"
         android:textAllCaps="false"
-        android:textSize="24dp" />
+        android:textSize="24sp"
+        tools:ignore="TextContrastCheck" />
 
 </LinearLayout>
