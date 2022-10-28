@@ -1,13 +1,20 @@
-package com.example.foodapp.accounts;
+package com.example.foodapp.classes;
 
-public class Restaurant {
+public class Deliveryman {
+    private String Uid;
     private String name;
-    private String email;
-    private String Address;
     private String mobile;
+    private String email;
     private String password;
+    private final String role = "Deliveryman";
 
-    public Restaurant(){}
+    public  Deliveryman(){}
+
+    public String getUid() { return Uid; }
+
+    public void setUid(String uid) { Uid = uid; }
+
+    public String getRole() { return role; }
 
     public String getName() {
         return name;
@@ -17,28 +24,20 @@ public class Restaurant {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String address) {
-        Address = address;
-    }
-
     public String getMobile() {
         return mobile;
     }
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

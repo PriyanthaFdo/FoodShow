@@ -1,14 +1,22 @@
-package com.example.foodapp.accounts;
+package com.example.foodapp.classes;
 
 public class Customer {
+    private String uid;
     private String firstName;
     private String lastName;
     private String email;
     private String mobile;
     private String address;
     private String password;
+    private final String role = "Customer";
 
     public Customer(){}
+
+    public String getRole() { return role; }
+
+    public String getUid() { return uid; }
+
+    public void setUid(String uid) { this.uid = uid; }
 
     public String getFirstName() {
         return firstName;

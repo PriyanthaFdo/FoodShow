@@ -3,12 +3,4 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".deliverer.ProfileFragment">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#DAB4B4"
-        android:text="delivery fragment profile" />
-
-</FrameLayout>
+    tools:context=".deliverer.ProfileFragment"/>
