@@ -22,9 +22,11 @@ public class LoginMain extends AppCompatActivity {
         setContentView(R.layout.login_activity_main);
 
         loginTypeSpinner = findViewById(R.id.loginTypeSpinner);
-        btn_ToReg = findViewById(R.id.btn_toLogin);
+        btn_ToReg = findViewById(R.id.View);
 
         btn_ToReg.setOnClickListener(view -> {
+
+
             Intent intent = new Intent(view.getContext(), RegisterMain.class);
             startActivity(intent);
         });
