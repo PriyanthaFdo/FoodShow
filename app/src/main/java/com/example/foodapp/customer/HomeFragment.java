@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import com.example.foodapp.R;
@@ -63,6 +64,7 @@ public class HomeFragment extends Fragment {
         progressBar = requireActivity().findViewById(R.id.cus_progressbar);
 
         progressBar.setVisibility(View.VISIBLE);
+        getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
         readRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -76,6 +78,7 @@ public class HomeFragment extends Fragment {
 
                 resAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.INVISIBLE);
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             }
 
             @Override
