@@ -37,8 +37,8 @@ public class ProfileFragment extends Fragment {
         btn_logout.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(v.getContext(), LoginMain.class));
-            Toast.makeText(getContext(), "Logged out!", Toast.LENGTH_SHORT).show();
             getActivity().finish();
+            Toast.makeText(getContext(), "Logged out!", Toast.LENGTH_SHORT).show();
         });
     }
 }

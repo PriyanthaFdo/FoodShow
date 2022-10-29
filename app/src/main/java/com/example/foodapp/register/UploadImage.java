@@ -42,9 +42,7 @@ public class UploadImage extends AppCompatActivity {
 
         id = getIntent().getStringExtra("id");
 
-        binding.btnSelectImg.setOnClickListener(v -> {
-            selectImage();
-        });
+        binding.btnSelectImg.setOnClickListener(v -> selectImage());
 
         binding.btnUploadImg.setOnClickListener(v -> {
             if(imageUri != null)
@@ -66,27 +64,22 @@ public class UploadImage extends AppCompatActivity {
 
         storageReference = FirebaseStorage.getInstance().getReference("/images/driver/"+id);
         storageReference.putFile(imageUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                .addOnSuccessListener(taskSnapshot -> {
+                    storageReference.getDownloadUrl().addOnSuccessListener(uri -> Toast.makeText(UploadImage.this, "Upload Successful", Toast.LENGTH_SHORT).show());
 
-                        binding.driverProfileImage.setImageURI(null);
-                        Toast.makeText(UploadImage.this, "Upload Successful", Toast.LENGTH_SHORT).show();
+                    binding.driverProfileImage.setImageURI(null);
 
-                        if(progressDialog.isShowing())
-                            progressDialog.dismiss();
 
-                        Intent i = new Intent(v.getContext(), DeliveryMain.class);
-                        startActivity(i);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        if(progressDialog.isShowing())
-                            progressDialog.dismiss();
+                    if(progressDialog.isShowing())
+                        progressDialog.dismiss();
 
-                        Toast.makeText(UploadImage.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
-                    }
+                    Intent i = new Intent(v.getContext(), DeliveryMain.class);
+                    startActivity(i);
+                }).addOnFailureListener(e -> {
+                    if(progressDialog.isShowing())
+                        progressDialog.dismiss();
+
+                    Toast.makeText(UploadImage.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
                 });
     }
 

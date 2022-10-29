@@ -20,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".customer.WriteReview"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".customer.BuyItemActivity"
             android:exported="false" />
