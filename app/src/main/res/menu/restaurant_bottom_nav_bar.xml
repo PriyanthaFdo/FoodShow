@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/nav_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/resNav_home" />
+
+    <item android:title="@string/nav_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:id="@+id/resNav_search" />
+
+    <item android:title="@string/nav_food"
+        android:icon="@drawable/ic_baseline_fastfood_24"
+        android:id="@+id/resNev_food" />
+
+    <item android:title="@string/nav_profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:id="@+id/resNav_pulse" />
+</menu>

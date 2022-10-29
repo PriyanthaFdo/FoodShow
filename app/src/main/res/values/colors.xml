@@ -5,11 +5,16 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#BFBFBF</color>
+
+    <color name="LightOrange">#f39959</color>
     <color name="orange">#EF7922</color>
-    <color name="dorange">#FF5722</color>
-    <color name="gray">#E3E1E1</color>
+    <color name="darkOrange">#d56210</color>
+    <color name="transparent">#00000000</color>
+
 
 
 </resources>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".register.CustomerRegisterFragment">
+
+    <EditText
+        android:id="@+id/edt_reg_cus_FirstName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="firstName"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_firstName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_cus_LastName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="lastName"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_lastName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_cus_mail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_mail"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_mail"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_cus_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="phone"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_mobile"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_mobile"
+        android:inputType="phone"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_cus_address"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="postalAddress"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_address"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_address"
+        android:inputType="textPostalAddress"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_cus_password"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="password"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_password"
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_cus_conformPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:autofillHints="confirmPassword"
+        android:background="@drawable/style_edt"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:hint="@string/edt_confirmPassword"
+        android:inputType="textPassword"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/View"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/selector_btn_outline"
+            android:paddingHorizontal="10dp"
+            android:text="@string/btn_login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/selector_btn_solid"
+            android:paddingHorizontal="10dp"
+            android:text="@string/btn_register"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

@@ -1,10 +1,7 @@
 <resources>
-    <string name="app_name">FoodApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home_fragment">Home Fragment</string>
-    <string name="search_fragment">Search Fragment</string>
-    <string name="profile_fragment">Profile Fragment</string>
+    <string name="app_name">FoodShow</string>
+    <string name="desc_logo">FoodShow logo</string>
+
     <string name="pending_orders">Pending Orders</string>
     <string name="confirm_orders">Confirm Orders</string>
     <string name="preparing_orders">Preparing Orders</string>
@@ -34,4 +31,69 @@
     <string name="restaurant_id">Restaurant ID :</string>
     <string name="backgroundimage">BackgroundImage</string>
     <string name="profileimage">ProfileImage</string>
+
+    <string name="lbl_Reg">Register</string>
+    <string name="lbl_Log">Login</string>
+    <string name="lbl_regType">Account type</string>
+    <string name="edt_firstName">First Name</string>
+    <string name="edt_lastName">Last Name</string>
+    <string name="edt_mail">Enter Email</string>
+    <string name="edt_mobile">Enter mobile Number</string>
+    <string name="edt_address">Enter Address</string>
+    <string name="edt_password">Enter Password</string>
+    <string name="edt_confirmPassword">Confirm Password</string>
+    <string name="btn_register">Sign Up</string>
+    <string name="btn_login">Sign In</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_food">Food</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_cart">Shopping Cart</string>
+
+    <string name="edt_reg_rest_restaurantName">Enter Restaurant Name</string>
+    <string name="edt_reg_rest_deliverymanName">Enter Deliveryman Name</string>
+
+    <string-array name="regTypes">
+        <item>Customer</item>
+        <item>Restaurant</item>
+        <item>Deliveryman</item>
+    </string-array>
+
+    <string name="lbl_orderId">Order ID:</string>
+    <string name="lbl_address">Address:</string>
+    <string name="lbl_foodName">Item Name</string>
+    <string name="lbl_foodPrice">Price</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_selectImage">Select Image</string>
+    <string name="btn_rest_reg_uploadImage">Upload Image</string>
+    <string name="food_profileImage">Profile Image</string>
+    <string name="add_food_items">Add Food Items</string>
+    <string name="name">Name</string>
+    <string name="price">Price</string>
+    <string name="back">Back</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="item_name">Item Name</string>
+    <string name="enter_price">Enter Price</string>
+    <string name="btn_dri_accept">Accept</string>
+    <string name="img_profileImage">Profile Image</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_addToCart">Add to Cart</string>
+    <string name="user">User</string>
+    <string name="firstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="mobile">Mobile No</string>
+    <string name="email">E-Mail</string>
+    <string name="address">Address</string>
+    <string name="password">Password</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="View">VIEW</string>
+    <string name="Rate">RATE</string>
+    <string name="reviewType">Write your REview</string>
+    <string name="reviewbutton"><![CDATA[Rate & Review]]></string>
+
 </resources>

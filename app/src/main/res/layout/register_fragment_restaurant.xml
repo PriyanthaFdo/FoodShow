@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".register.RestaurantRegisterFragment" >
+
+    <EditText
+        android:id="@+id/edt_reg_rest_name"
+        android:autofillHints="name"
+        android:hint="@string/edt_reg_rest_restaurantName"
+        android:drawableStart="@drawable/ic_shopping_cart"
+        android:inputType="textPersonName"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/style_edt"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck"/>
+
+    <EditText
+        android:id="@+id/edt_reg_rest_mail"
+        android:autofillHints="emailAddress"
+        android:hint="@string/edt_mail"
+        android:drawableStart="@drawable/ic_mail"
+        android:inputType="textEmailAddress"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/style_edt"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_rest_address"
+        android:autofillHints="postalAddress"
+        android:hint="@string/edt_address"
+        android:drawableStart="@drawable/ic_address"
+        android:inputType="textPostalAddress"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/style_edt"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_rest_mobile"
+        android:autofillHints="phone"
+        android:hint="@string/edt_mobile"
+        android:drawableStart="@drawable/ic_mobile"
+        android:inputType="phone"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/style_edt"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_rest_password"
+        android:autofillHints="password"
+        android:hint="@string/edt_password"
+        android:drawableStart="@drawable/ic_password"
+        android:inputType="textPassword"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/style_edt"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/edt_reg_rest_confirmPass"
+        android:autofillHints="password"
+        android:hint="@string/edt_confirmPassword"
+        android:drawableStart="@drawable/ic_password"
+        android:inputType="textPassword"
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0"
+        android:background="@drawable/style_edt"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/gray"
+        android:ems="10"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:textColorHint="@color/gray"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/View"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/selector_btn_outline"
+            android:paddingHorizontal="10dp"
+            android:text="@string/btn_login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/selector_btn_solid"
+            android:paddingHorizontal="10dp"
+            android:text="@string/btn_register"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
