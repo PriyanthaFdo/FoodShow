@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.foodapp.R;
 import com.example.foodapp.classes.Foods;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,7 @@ public class BuyItemActivity extends AppCompatActivity {
     BuyItemAdapter adapter;
     ArrayList<Foods> list;
     String uid;
+    FloatingActionButton addToCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class BuyItemActivity extends AppCompatActivity {
         uid = i.getStringExtra("u_id");
 
         recyclerView = findViewById(R.id.buyItemsrecyclerview);
+        addToCart = findViewById(R.id.btn_floating_addToCart);
         DB = FirebaseDatabase.getInstance().getReference().child("Restaurant").child(uid).child("FoodItem");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -41,7 +45,12 @@ public class BuyItemActivity extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new BuyItemAdapter(this, list);
         recyclerView.setAdapter(adapter);
-
+/*
+        //TODO create Intent to go to Cart
+        addToCart.setOnClickListener(v -> {
+            Intent i = new Intent(BuyItemActivity.this, Cart.class)
+        });
+        */
         DB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
