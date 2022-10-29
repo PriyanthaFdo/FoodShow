@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment {
         DB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                orderItemArrayList.clear();
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     OrderItem item = dataSnapshot.getValue(OrderItem.class);
                     orderItemArrayList.add(item);
