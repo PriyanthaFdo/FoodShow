@@ -16,6 +16,12 @@
         android:theme="@style/Theme.FoodApp"
         tools:targetApi="31">
         <activity
+            android:name=".customer.DisplayReviewsCustomer"
+            android:exported="false" />
+        <activity
+            android:name=".customer.WriteReview"
+            android:exported="true"></activity>
+        <activity
             android:name=".customer.BuyItemActivity"
             android:exported="false" />
         <activity

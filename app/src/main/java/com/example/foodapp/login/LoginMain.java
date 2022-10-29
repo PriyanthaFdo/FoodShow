@@ -43,7 +43,7 @@ public class LoginMain extends AppCompatActivity {
         setContentView(R.layout.login_activity_main);
 
         loginTypeSpinner = findViewById(R.id.loginTypeSpinner);
-        btn_ToReg = findViewById(R.id.btn_toLogin);
+        btn_ToReg = findViewById(R.id.View);
         btn_login = findViewById(R.id.btn_next);
         edt_mail = findViewById(R.id.edt_login_mail);
         edt_pass = findViewById(R.id.edt_login_pass);
@@ -161,6 +161,8 @@ public class LoginMain extends AppCompatActivity {
         });
 
         btn_ToReg.setOnClickListener(view -> {
+
+
             Intent intent = new Intent(view.getContext(), RegisterMain.class);
             startActivity(intent);
         });

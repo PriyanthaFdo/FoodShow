@@ -5,7 +5,9 @@ public class Restaurant {
     private String name;
     private String email;
     private String Address;
-    private String mobile;
+
+    ///////
+    static private String mobile;
     private String password;
     private final String role ="Restaurant";
 
@@ -41,7 +43,10 @@ public class Restaurant {
         Address = address;
     }
 
-    public String getMobile() {
+
+
+    /////////
+    public static String getMobile() {
         return mobile;
     }
 

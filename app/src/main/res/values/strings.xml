@@ -59,5 +59,18 @@
     <string name="btn_skip">Skip</string>
     <string name="btn_logout">Logout</string>
     <string name="btn_addToCart">Add to Cart</string>
+    <string name="user">User</string>
+    <string name="firstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="mobile">Mobile No</string>
+    <string name="email">E-Mail</string>
+    <string name="address">Address</string>
+    <string name="password">Password</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="View">VIEW</string>
+    <string name="Rate">RATE</string>
+    <string name="reviewType">Write your REview</string>
+    <string name="reviewbutton"><![CDATA[Rate & Review]]></string>
 
 </resources>
