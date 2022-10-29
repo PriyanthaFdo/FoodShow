@@ -24,7 +24,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:ignore="TextContrastCheck" />
+                tools:ignore="TextContrastCheck"/>
 
             <Button
                 android:id="@+id/confirm_orders"

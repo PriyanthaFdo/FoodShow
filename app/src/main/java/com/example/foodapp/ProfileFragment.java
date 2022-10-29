@@ -1,6 +1,7 @@
 package com.example.foodapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,19 +34,19 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    //profile Start
+    private TextView resID,resName,resAddress,resEmail,resConNo;
+    private ImageView imageView,profileImage;
+    private String email,password;
+    private FirebaseDatabase database;
+    private DatabaseReference userRef;
+    private static final String RESTAURANT ="Restaurant";
+
 
     public ProfileFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
@@ -61,14 +64,48 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Intent intent = new Intent();
+        String email = intent.getStringExtra("email");
+
+        resID=resID.findViewById(R.id.ResID);
+        resName=resName.findViewById(R.id.resName);
+        resEmail=resEmail.findViewById(R.id.resEmail);
+        resAddress=resAddress.findViewById(R.id.resAddress);
+        resConNo=resConNo.findViewById(R.id.resConNo);
+        imageView=imageView.findViewById(R.id.imageView);
+        profileImage=profileImage.findViewById(R.id.profile);
+
+        database = FirebaseDatabase.getInstance();
+        userRef = database.getReference(RESTAURANT);
+
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    if (dataSnapshot.child("email").getValue().equals(email)){
+                        resName.setText(dataSnapshot.child("name").getValue(String.class));
+                        resName.setText(email);
+                        resName.setText(dataSnapshot.child("address").getValue(String.class));
+                        resName.setText(dataSnapshot.child("mobile").getValue(String.class));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        return view;
     }
 }
