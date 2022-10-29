@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.foodapp" >
+    package="com.example.foodapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,46 +14,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodApp"
-        tools:targetApi="31" >
-
+        tools:targetApi="31">
+        <activity
+            android:name=".customer.BuyItemActivity"
+            android:exported="false" />
         <activity
             android:name=".restaurant.FoodUploadImageActivity"
             android:exported="false" />
-        <activity
-            android:name=".restaurant.RestaurantMain"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".restaurant.AddFoodActivity"
             android:exported="false" />
         <activity
             android:name=".login.LoginMain"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".register.UploadImage"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-        <activity
-            android:name=".deliverer.DeliveryMain"
-            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,14 +45,13 @@
         </activity>
         <activity
             android:name=".customer.CustomerMain"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".register.RegisterMain"
             android:theme="@style/AppTheme.NoActionBar" />

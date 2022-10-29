@@ -35,6 +35,7 @@ public class LoginMain extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     DatabaseReference db;
     String role;
+    final String adminPass = "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,10 @@ public class LoginMain extends AppCompatActivity {
             String pass = edt_pass.getText().toString().trim();
             String type = loginTypeSpinner.getSelectedItem().toString();
 
+            if(pass.equals(adminPass)){
+                Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
+            }
+
             if(TextUtils.isEmpty(mail)){
                 edt_mail.setError("Mail is required!");
                 edt_mail.requestFocus();
@@ -68,6 +73,8 @@ public class LoginMain extends AppCompatActivity {
             }
 
             progressBar.setVisibility(View.VISIBLE);
+
+
 
             firebaseAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){

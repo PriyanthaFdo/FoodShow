@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Foods;
+import com.example.foodapp.classes.Foods;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,13 +22,12 @@ public class AddFoodActivity extends AppCompatActivity {
     DatabaseReference dbRef;
     Foods food;
     FirebaseAuth firebaseAuth;
-
+/*
     private void clearInputs(){
         foodName.setText("");
         price.setText("");
 
-    }
-
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,35 +48,29 @@ public class AddFoodActivity extends AppCompatActivity {
 
             dbRef = FirebaseDatabase.getInstance().getReference().child("Restaurant").child(firebaseAuth.getCurrentUser().getUid()).child("FoodItem");
 
-                if (TextUtils.isEmpty(foodName.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter a food", Toast.LENGTH_SHORT).show();
-                else if (TextUtils.isEmpty(price.getText().toString()))
-                    Toast.makeText(getApplicationContext(), "Please enter a Price", Toast.LENGTH_SHORT).show();
+            if (TextUtils.isEmpty(foodName.getText().toString()))
+                Toast.makeText(getApplicationContext(), "Please enter a food", Toast.LENGTH_SHORT).show();
+            else if (TextUtils.isEmpty(price.getText().toString()))
+                Toast.makeText(getApplicationContext(), "Please enter a Price", Toast.LENGTH_SHORT).show();
 
 
-                else {
-                    food.setName(foodName.getText().toString().trim());
-                    food.setPrice(price.getText().toString().trim());
+            else {
+                food.setName(foodName.getText().toString().trim());
+                food.setPrice(price.getText().toString().trim());
 
-                    //dbRef.push().setValue(std);
-                    dbRef.child(food.getName()).setValue(food);
-                    Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
-                    clearInputs();
+                //dbRef.push().setValue(std);
+                dbRef.child(food.getName()).setValue(food);
+                Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
+                //clearInputs();
 
-                    Intent i = new Intent(AddFoodActivity.this, FoodUploadImageActivity.class);
-                    i.putExtra("itemName",food.getName());
-                    startActivity(i);
-                }
-
-
-
-
+                Intent i = new Intent(AddFoodActivity.this, FoodUploadImageActivity.class);
+                i.putExtra("itemName",food.getName());
+                startActivity(i);
+            }
         });
 
 
-        btnBack.setOnClickListener(view -> {
-       //     startActivity(new Intent(this,FoodFragment.this));
-        });
+        btnBack.setOnClickListener(view -> startActivity(new Intent(AddFoodActivity.this, RestaurantMain.class)));
 
 
 

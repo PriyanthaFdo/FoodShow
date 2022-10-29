@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodapp.R;
+import com.example.foodapp.classes.OrderItem;
 
 import java.util.ArrayList;
 

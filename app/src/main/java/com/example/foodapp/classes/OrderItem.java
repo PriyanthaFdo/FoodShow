@@ -1,4 +1,4 @@
-package com.example.foodapp.deliverer;
+package com.example.foodapp.classes;
 
 public class OrderItem {
     private String orderID;
