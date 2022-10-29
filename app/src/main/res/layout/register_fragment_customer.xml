@@ -141,7 +141,7 @@
         android:layout_weight="0">
 
         <Button
-            android:id="@+id/View"
+            android:id="@+id/btn_toLogin"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_margin="15dp"
@@ -156,7 +156,7 @@
             tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <Button
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_ToSignIn"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_margin="15dp"

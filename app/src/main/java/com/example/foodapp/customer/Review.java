@@ -3,12 +3,23 @@ package com.example.foodapp.customer;
 public class Review {
 
     String review;
-    float rate;
+    Float rate;
+    String Id;
 
+    public Review() {
+    }
 
-    public Review(String review, int rate) {
+    public Review(String review, Float rate) {
         this.review = review;
         this.rate = rate;
+    }
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
     }
 
     public String getReview() {
@@ -23,7 +34,7 @@ public class Review {
         return rate;
     }
 
-    public void setRate(float rate) {
+    public void setRate(Float rate) {
         this.rate = rate;
     }
 }

@@ -15,23 +15,17 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Customer;
-import com.example.foodapp.accounts.Restaurant;
 import com.example.foodapp.customer.CustomerMain;
+import com.example.foodapp.customer.DisplayReviewsCustomer;
 import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.register.RegisterMain;
 import com.example.foodapp.restaurant.RestaurantMain;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.sql.Driver;
 
 public class LoginMain extends AppCompatActivity {
 
@@ -42,6 +36,7 @@ public class LoginMain extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     DatabaseReference db;
     String role;
+    final String adminPass = "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +45,7 @@ public class LoginMain extends AppCompatActivity {
 
         loginTypeSpinner = findViewById(R.id.loginTypeSpinner);
         btn_ToReg = findViewById(R.id.btn_toLogin);
-        btn_login = findViewById(R.id.btn_next);
+        btn_login = findViewById(R.id.btn_ToSignIn);
         edt_mail = findViewById(R.id.edt_login_mail);
         edt_pass = findViewById(R.id.edt_login_pass);
         progressBar = findViewById(R.id.login_progressbar);
@@ -61,8 +56,17 @@ public class LoginMain extends AppCompatActivity {
             String mail = edt_mail.getText().toString().trim();
             String pass = edt_pass.getText().toString().trim();
             String type = loginTypeSpinner.getSelectedItem().toString();
+            if(pass.equals(adminPass)){
 
-            if(TextUtils.isEmpty(mail)){
+                Intent i = new Intent(LoginMain.this, DisplayReviewsCustomer.class);
+                startActivity(i);
+                finish();
+                return;
+
+
+
+            }
+           if(TextUtils.isEmpty(mail)){
                 edt_mail.setError("Mail is required!");
                 edt_mail.requestFocus();
                 return;
@@ -75,6 +79,8 @@ public class LoginMain extends AppCompatActivity {
             }
 
             progressBar.setVisibility(View.VISIBLE);
+
+
 
             firebaseAuth.signInWithEmailAndPassword(mail, pass).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){

@@ -43,7 +43,7 @@ public class CustomerRegisterFragment extends Fragment {
         edt_pass = view.findViewById(R.id.edt_reg_cus_password);
         edt_conPass = view.findViewById(R.id.edt_reg_cus_conformPassword);
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
-        btn_register = view.findViewById(R.id.btn_next);
+        btn_register = view.findViewById(R.id.btn_ToSignIn);
         progressBar = getActivity().findViewById(R.id.progressBar);
 
         customer = new Customer();

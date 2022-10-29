@@ -16,8 +16,6 @@ import android.widget.Toast;
 
 import com.example.foodapp.R;
 import com.example.foodapp.accounts.Deliveryman;
-import com.example.foodapp.customer.CustomerMain;
-import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.login.LoginMain;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +40,7 @@ public class DriverRegisterFragment extends Fragment {
         edt_password = view.findViewById(R.id.edt_reg_del_pass);
         edt_confirmPassword = view.findViewById(R.id.edt_reg_del_confirmPass);
         btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
-        btn_next = view.findViewById(R.id.btn_next);
+        btn_next = view.findViewById(R.id.btn_ToSignIn);
         progressBar = getActivity().findViewById(R.id.progressBar);
 
         deliveryman = new Deliveryman();

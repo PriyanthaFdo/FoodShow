@@ -49,7 +49,25 @@
     <string name="lname">Last Name</string>
     <string name="View">VIEW</string>
     <string name="Rate">RATE</string>
+    <string name="lbl_orderId">Order ID</string>
+    <string name="lbl_address">Address</string>
     <string name="reviewType">Write your REview</string>
     <string name="reviewbutton"><![CDATA[Rate & Review]]></string>
+
+    <string name="btn_dri_accept">Accept</string>
+    <string name="img_profileImage">Profile Image</string>
+    <string name="btn_selectImage">Select Image</string>
+    <string name="btn_rest_reg_uploadImage">Upload Image</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_next">Next</string>
+    <string name="writeReview">Reviews</string>
+    <string name="editPwd">password</string>
+    <string name="Editmobile">Mobile</string>
+    <string name="editphone_">Edit Mobile</string>
+    <string name="EditFname">FirstName</string>
+    <string name="EditLastName">LastName</string>
+    <string name="Submit">Update</string>
+    <string name="updateHere">Change your Profile</string>
+
 
 </resources>

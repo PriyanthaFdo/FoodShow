@@ -44,10 +44,11 @@ public class HomeFragment extends Fragment {
 
         viewReviewBtn=view.findViewById(R.id.floatingActionButton);
 
+
         viewReviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), DisplayReviewsCustomer.class);
+                Intent i = new Intent(view.getContext(), WriteReview.class);
                 startActivity(i);
             }
         });
@@ -81,6 +82,8 @@ public class HomeFragment extends Fragment {
                     CusRestaurant res = restaurants.getValue(CusRestaurant.class);
 
                     myRestaurantList.add(res);
+
+
 
                 }
 
