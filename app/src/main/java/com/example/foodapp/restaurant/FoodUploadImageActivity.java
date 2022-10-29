@@ -1,4 +1,4 @@
-package com.example.foodapp.register;
+package com.example.foodapp.restaurant;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,37 +10,38 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
-import com.example.foodapp.R;
-import com.example.foodapp.databinding.RegisterActivityUploadimageBinding;
-import com.example.foodapp.deliverer.DeliveryMain;
+import com.example.foodapp.databinding.RestaurantActivityFoodimageuploadBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+public class FoodUploadImageActivity extends AppCompatActivity {
 
-public class UploadImage extends AppCompatActivity {
-    RegisterActivityUploadimageBinding binding;
+    RestaurantActivityFoodimageuploadBinding binding;
     Uri imageUri;
     StorageReference storageReference;
     ProgressDialog progressDialog;
-    String id;
+    String itemName;
+    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = RegisterActivityUploadimageBinding.inflate(getLayoutInflater());
+        binding = RestaurantActivityFoodimageuploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        id = getIntent().getStringExtra("id");
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            itemName = extras.getString("itemName");
+        }
+
+
+        setContentView(binding.getRoot());
+
 
         binding.btnSelectImg.setOnClickListener(v -> selectImage());
 
@@ -48,38 +49,35 @@ public class UploadImage extends AppCompatActivity {
             if(imageUri != null)
                 uploadImage(v);
             else
-                Toast.makeText(UploadImage.this, "Select Image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FoodUploadImageActivity.this, "Select Image", Toast.LENGTH_SHORT).show();
         });
 
-        binding.btnSkip.setOnClickListener(v -> {
-            Intent i = new Intent(v.getContext(), DeliveryMain.class);
-            startActivity(i);
-        });
     }
+
+
 
     private void uploadImage(View v) {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Creating your account...");
+        progressDialog.setTitle("Uploading Image...");
         progressDialog.show();
 
-        storageReference = FirebaseStorage.getInstance().getReference("/images/driver/"+id);
+        storageReference = FirebaseStorage.getInstance().getReference("/images/food/"+uid+"/"+itemName);
         storageReference.putFile(imageUri)
                 .addOnSuccessListener(taskSnapshot -> {
-                    storageReference.getDownloadUrl().addOnSuccessListener(uri -> Toast.makeText(UploadImage.this, "Upload Successful", Toast.LENGTH_SHORT).show());
 
-                    binding.driverProfileImage.setImageURI(null);
-
+                    binding.foodProfileImage.setImageURI(null);
+                    Toast.makeText(FoodUploadImageActivity.this, "Upload Successful", Toast.LENGTH_SHORT).show();
 
                     if(progressDialog.isShowing())
                         progressDialog.dismiss();
 
-                    Intent i = new Intent(v.getContext(), DeliveryMain.class);
+                    Intent i = new Intent(v.getContext(), AddFoodActivity.class);
                     startActivity(i);
                 }).addOnFailureListener(e -> {
                     if(progressDialog.isShowing())
                         progressDialog.dismiss();
 
-                    Toast.makeText(UploadImage.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FoodUploadImageActivity.this, "Failed to Upload", Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -96,7 +94,9 @@ public class UploadImage extends AppCompatActivity {
 
         if(requestCode == 100 && data != null && data.getData() != null){
             imageUri = data.getData();
-            binding.driverProfileImage.setImageURI(imageUri);
+            binding.foodProfileImage.setImageURI(imageUri);
         }
     }
 }
+
+

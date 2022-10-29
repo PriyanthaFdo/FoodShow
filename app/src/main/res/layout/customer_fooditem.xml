@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="8dp"
+    android:background="@drawable/style_btn_solid_secondary"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/fooditem_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/food_profileImage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_fastfood_24" />
+
+    <TextView
+        android:id="@+id/lbl_cust_fooditem_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/lbl_foodName"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lbl_cust_fooditem_price"
+        app:layout_constraintStart_toEndOf="@+id/fooditem_img" />
+
+    <TextView
+        android:id="@+id/lbl_cust_fooditem_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_foodPrice"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cust_fooditem_add"
+        app:layout_constraintStart_toStartOf="@+id/lbl_cust_fooditem_name"
+        app:layout_constraintTop_toTopOf="@+id/btn_cust_fooditem_add" />
+
+    <Button
+        android:id="@+id/btn_cust_fooditem_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_addToCart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TextContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,7 +43,7 @@ public class RestaurantRegisterFragment extends Fragment {
         mobileNumber = view.findViewById(R.id.edt_reg_rest_mobile);
         password = view.findViewById(R.id.edt_reg_rest_password);
         confirmPassword = view.findViewById(R.id.edt_reg_rest_confirmPass);
-        btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
+        btn_ToSignIn = view.findViewById(R.id.View);
         btn_register = view.findViewById(R.id.btn_next);
         progressBar = requireActivity().findViewById(R.id.progressBar);
 

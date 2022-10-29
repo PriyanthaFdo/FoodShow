@@ -14,4 +14,84 @@
         android:text="@string/btn_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fname"
+        android:layout_width="108dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/fname"
+        app:layout_constraintBottom_toTopOf="@+id/lname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lname"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="267dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/lname"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fname" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="116dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="258dp"
+        android:layout_marginBottom="38dp"
+        android:text="@string/email"
+        app:layout_constraintBottom_toTopOf="@+id/mobile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lname" />
+
+    <TextView
+        android:id="@+id/mobile"
+        android:layout_width="119dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="255dp"
+        android:layout_marginBottom="27dp"
+        android:text="@string/mobile"
+        app:layout_constraintBottom_toTopOf="@+id/address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="110dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="39dp"
+        android:text="@string/address"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobile" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="126dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="248dp"
+        android:layout_marginBottom="197dp"
+        android:text="@string/password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 </androidx.constraintlayout.widget.ConstraintLayout>
