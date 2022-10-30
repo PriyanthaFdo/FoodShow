@@ -14,6 +14,7 @@
         android:layout_width="307dp"
         android:layout_height="50dp"
         android:text="@string/Editmobile"
+        android:inputType="phone"
         android:textSize="25sp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,6 +32,7 @@
         android:gravity="center"
         android:textSize="25sp"
         android:text="@string/address"
+        android:inputType="textPostalAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.453"
@@ -87,13 +89,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/updateHere"
+        android:textColor="#92B"
         android:textSize="40sp"
+        app:drawableTint="#656F2B7A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.066" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

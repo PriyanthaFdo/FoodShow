@@ -3,9 +3,12 @@ package com.example.foodapp.customer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,16 +26,15 @@ import java.util.HashMap;
 public class WriteReview extends AppCompatActivity {
 
 
-    //Unique phone nu of restaurant
-    //private
 
     Button btnSubmit, backBtn;
     RatingBar ratingStar;
     TextView txtReview;
     FirebaseAuth firebaseAuth;
-    //String mobile;
     private DatabaseReference dbRef;
     Review rev;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,13 @@ public class WriteReview extends AppCompatActivity {
         txtReview = findViewById(R.id.Review);
         btnSubmit =  findViewById(R.id.btnSubmit);
         ratingStar = findViewById(R.id.ratingBar);
-       // firebaseAuth = FirebaseAuth.getInstance();
         rev = new Review();
-       // mobile = getIntent().getStringExtra("mobile");
+
+
+
+
+
+
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +69,7 @@ public class WriteReview extends AppCompatActivity {
                 int rating = (int) v;
                 String message = null;
 
+                //display those messages based on the customer inputs
                 switch(rating) {
                     case 1:
                         message = "Sorry to hear that!";
@@ -87,14 +94,22 @@ public class WriteReview extends AppCompatActivity {
 
                 Toast.makeText(WriteReview.this, message, Toast.LENGTH_SHORT).show();
 
-
             }
         });
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(TextUtils.isEmpty(txtReview.getText().toString())) {
+                    txtReview.setError("Please enter a review about our app");
+                    txtReview.requestFocus();
+                    return;
+                }
+
+                Intent i = new Intent(WriteReview.this, CustomerMain.class);
+                startActivity(i);
                 InputData();
+
 
 
             }
@@ -104,32 +119,22 @@ public class WriteReview extends AppCompatActivity {
 
     private void InputData() {
 
-
         rev.setReview(txtReview.getText().toString().trim());
         rev.setRate(ratingStar.getRating());
 
-
-
-/*
-        HashMap<String, Object> hashmap = new HashMap<>();
-      // hashmap.put("RestaurantNo", ""+mobile);
-        hashmap.put("ratings", "" + ratings);
-        hashmap.put("review", "" + review);
-
- */
-
-dbRef =  FirebaseDatabase.getInstance().getReference("Admin");
+        //save review and rate details in the Admin reference
+        dbRef =  FirebaseDatabase.getInstance().getReference("Admin");
         dbRef.push().setValue(rev).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                //review added to DB
+                //display this when review added to DB successfully
                 Toast.makeText(WriteReview.this, "Review Published successfully", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                //failed added review to DB
+                //display this when review failed to added review to DB
                 Toast.makeText(WriteReview.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

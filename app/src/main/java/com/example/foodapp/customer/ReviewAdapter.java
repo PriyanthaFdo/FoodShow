@@ -22,16 +22,11 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyRateView
 
     ArrayList<Review> reviews;
     Context context;
-
-
     private OnItemClickListener listener;
-
-
 
     public interface OnItemClickListener{
         void onItemClick(int position);
     }
-
 
     public void setOnItemClickListener(OnItemClickListener clickListener){
         listener = clickListener;
@@ -52,20 +47,14 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyRateView
     @Override
     public void onBindViewHolder(@NonNull ReviewAdapter.MyRateViewHolder holder, int position) {
         Review revs = reviews.get(position);
-      //  holder.Rate.setText((int) revs.getRate());
 
-        //num.setText(String.valueOf(returnnum));
         holder.Rate.setText(String.valueOf(revs.getRate()));
         holder.ReviewTxt.setText(revs.getReview());
 
         holder.id.setText(revs.getId());
     }
 
-
-
-
-
-    @Override
+  @Override
     public int getItemCount() {
 
         return reviews.size();
@@ -75,9 +64,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyRateView
        private  final TextView Rate, ReviewTxt, id;
         private  ImageView deleteBin;
 
-
-
-        public MyRateViewHolder(@NonNull View itemView, OnItemClickListener listener) {
+      public MyRateViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
 
             deleteBin = itemView.findViewById(R.id.deleteBin);
@@ -89,6 +76,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.MyRateView
 
             DatabaseReference delRef = FirebaseDatabase.getInstance().getReference("Admin");
 
+            //delete those details from the admin reference when the admin clicks delete Bin icon
             deleteBin.setOnClickListener(new View.OnClickListener() {
 
 

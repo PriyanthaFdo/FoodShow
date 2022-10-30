@@ -112,6 +112,7 @@
             android:layout_width="177dp"
             android:layout_height="62dp"
             android:text="Update Profile"
+            android:textColor="#263238"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
