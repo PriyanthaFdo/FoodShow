@@ -6,6 +6,15 @@ public class OrderItem {
     private String orderItems;
     private String orderStatus;
     private String orderTotal;
+    private String pickLocation;
+    private String destinationMobile;
+    private String price;
+
+    private class foodInOrder{
+        private String foodName;
+        private String fodPrice;
+
+    }
 
     public OrderItem() {}
 

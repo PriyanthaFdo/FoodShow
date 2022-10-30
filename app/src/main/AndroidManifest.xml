@@ -20,7 +20,7 @@
             android:exported="false" />
         <activity
             android:name=".customer.WriteReview"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".customer.BuyItemActivity"
             android:exported="false" />
@@ -40,24 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".register.UploadImage"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".customer.CustomerMain"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".register.UploadImage" />
+        <activity android:name=".customer.CustomerMain" />
         <activity
             android:name=".register.RegisterMain"
             android:theme="@style/AppTheme.NoActionBar" />

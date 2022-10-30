@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.register.RegisterMain;
 import com.example.foodapp.restaurant.RestaurantMain;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +36,7 @@ public class LoginMain extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth firebaseAuth;
     DatabaseReference db;
-    String role;
+    FirebaseUser uid;
     final String adminPass = "admin";
 
     @Override
@@ -50,6 +52,38 @@ public class LoginMain extends AppCompatActivity {
         progressBar = findViewById(R.id.login_progressbar);
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance().getReference();
+        uid = firebaseAuth.getCurrentUser();
+
+        if(uid != null){
+            progressBar.setVisibility(View.VISIBLE);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+            db.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.child("Customer").hasChild(uid.getUid())){
+                        startActivity(new Intent(LoginMain.this, CustomerMain.class));
+                        finish();
+                    }
+                    else if(snapshot.child("Deliveryman").hasChild(uid.getUid())){
+                        startActivity(new Intent(LoginMain.this, DeliveryMain.class));
+                        finish();
+                    }
+                    else if(snapshot.child("Restaurant").hasChild(uid.getUid())){
+                        startActivity(new Intent(LoginMain.this, RestaurantMain.class));
+                        finish();
+                    }
+                    else {
+                        FirebaseAuth.getInstance().signOut();
+                        progressBar.setVisibility(View.INVISIBLE);
+                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {}
+            });
+        }
 
         btn_login.setOnClickListener(v -> {
             String mail = edt_mail.getText().toString().trim();
@@ -73,6 +107,7 @@ public class LoginMain extends AppCompatActivity {
             }
 
             progressBar.setVisibility(View.VISIBLE);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
 
 
@@ -94,6 +129,7 @@ public class LoginMain extends AppCompatActivity {
                                         Toast.makeText(LoginMain.this, "Customer Login Failed!", Toast.LENGTH_SHORT).show();
                                         FirebaseAuth.getInstance().signOut();
                                         progressBar.setVisibility(View.INVISIBLE);
+                                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                     }
                                 }
 
@@ -118,6 +154,7 @@ public class LoginMain extends AppCompatActivity {
                                         Toast.makeText(LoginMain.this, "Restaurant Login Failed!", Toast.LENGTH_SHORT).show();
                                         FirebaseAuth.getInstance().signOut();
                                         progressBar.setVisibility(View.INVISIBLE);
+                                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                     }
                                 }
 
@@ -142,6 +179,7 @@ public class LoginMain extends AppCompatActivity {
                                         Toast.makeText(LoginMain.this, "Deliveryman Login Failed!", Toast.LENGTH_SHORT).show();
                                         FirebaseAuth.getInstance().signOut();
                                         progressBar.setVisibility(View.INVISIBLE);
+                                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                     }
                                 }
 
@@ -155,6 +193,7 @@ public class LoginMain extends AppCompatActivity {
                 else {
                     Toast.makeText(LoginMain.this, "Login Failed! "+task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.INVISIBLE);
+                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                 }
             });
 

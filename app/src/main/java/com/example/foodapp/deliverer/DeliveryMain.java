@@ -16,6 +16,9 @@ public class DeliveryMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getSupportActionBar().setTitle("FoodShow | Deliveryman");
+
         binding = DeliveryActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceDeliveryFragment(new HomeFragment());
