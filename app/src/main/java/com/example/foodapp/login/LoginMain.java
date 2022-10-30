@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.foodapp.R;
 import com.example.foodapp.customer.CustomerMain;
+import com.example.foodapp.customer.DisplayReviewsCustomer;
 import com.example.foodapp.deliverer.DeliveryMain;
 import com.example.foodapp.register.RegisterMain;
 import com.example.foodapp.restaurant.RestaurantMain;
@@ -38,6 +39,7 @@ public class LoginMain extends AppCompatActivity {
     DatabaseReference db;
     FirebaseUser uid;
     final String adminPass = "admin";
+    final String adminPass = "admin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class LoginMain extends AppCompatActivity {
 
         loginTypeSpinner = findViewById(R.id.loginTypeSpinner);
         btn_ToReg = findViewById(R.id.View);
-        btn_login = findViewById(R.id.btn_next);
+        btn_login = findViewById(R.id.btn_ToSignIn);
         edt_mail = findViewById(R.id.edt_login_mail);
         edt_pass = findViewById(R.id.edt_login_pass);
         progressBar = findViewById(R.id.login_progressbar);
@@ -89,6 +91,12 @@ public class LoginMain extends AppCompatActivity {
             String mail = edt_mail.getText().toString().trim();
             String pass = edt_pass.getText().toString().trim();
             String type = loginTypeSpinner.getSelectedItem().toString();
+            if(pass.equals(adminPass)){
+
+                Intent i = new Intent(LoginMain.this, DisplayReviewsCustomer.class);
+                startActivity(i);
+                finish();
+                return;
 
             if(pass.equals(adminPass)){
                 Toast.makeText(this, pass, Toast.LENGTH_SHORT).show();
@@ -108,6 +116,8 @@ public class LoginMain extends AppCompatActivity {
 
             progressBar.setVisibility(View.VISIBLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
+
 
 
 
@@ -200,8 +210,6 @@ public class LoginMain extends AppCompatActivity {
         });
 
         btn_ToReg.setOnClickListener(view -> {
-
-
             Intent intent = new Intent(view.getContext(), RegisterMain.class);
             startActivity(intent);
         });

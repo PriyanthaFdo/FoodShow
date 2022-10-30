@@ -42,8 +42,9 @@ public class HomeFragment extends Fragment {
 
         viewReviewBtn=view.findViewById(R.id.floatingActionButton);
 
+
         viewReviewBtn.setOnClickListener(view1 -> {
-            Intent i = new Intent(view1.getContext(), DisplayReviewsCustomer.class);
+            Intent i = new Intent(view1.getContext(), WriteReview.class);
             startActivity(i);
         });
 

@@ -16,6 +16,9 @@
         android:theme="@style/Theme.FoodApp"
         tools:targetApi="31">
         <activity
+            android:name=".customer.EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".customer.DisplayReviewsCustomer"
             android:exported="false" />
         <activity
@@ -31,6 +34,15 @@
         <activity
             android:name=".restaurant.FooditemMainActivity"
             android:exported="false" />
+            android:name=".login.LoginMain"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".restaurant.FoodUploadImageActivity"
             android:exported="false" />
@@ -49,6 +61,8 @@
         </activity>
         <activity android:name=".register.UploadImage" />
         <activity android:name=".customer.CustomerMain" />
+            android:name=".deliverer.DeliveryMain"
+            android:exported="true"></activity>
         <activity
             android:name=".register.RegisterMain"
             android:theme="@style/AppTheme.NoActionBar" />

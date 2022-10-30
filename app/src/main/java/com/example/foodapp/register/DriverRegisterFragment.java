@@ -43,7 +43,7 @@ public class DriverRegisterFragment extends Fragment {
         edt_password = view.findViewById(R.id.edt_reg_del_pass);
         edt_confirmPassword = view.findViewById(R.id.edt_reg_del_confirmPass);
         btn_ToSignIn = view.findViewById(R.id.View);
-        btn_next = view.findViewById(R.id.btn_next);
+        btn_next = view.findViewById(R.id.btn_ToSignIn);
         progressBar = requireActivity().findViewById(R.id.progressBar);
 
         deliveryman = new Deliveryman();
