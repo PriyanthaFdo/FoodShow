@@ -3,19 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FoodApp/app/src/main/res/drawable/add_new.xml" value="0.223" />
+        <entry key="..\:/FoodApp/app/src/main/res/drawable/rounded.xml" value="0.2325" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_add.xml" value="0.2604166666666667" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_add2.xml" value="0.15729166666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/activity_food_updat_main.xml" value="0.26197916666666665" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_food_upload_image.xml" value="0.264" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/activity_fooditem_main.xml" value="0.1" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/activity_main_item.xml" value="0.27447916666666666" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_uploard_image.xml" value="0.1" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_viewall.xml" value="0.27447916666666666" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_viewall2.xml" value="0.27447916666666666" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/add_food_item.xml" value="0.2734375" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/customer_fragment_cart.xml" value="0.27447916666666666" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/food_activity_uploadingimage.xml" value="0.176" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/fragment_add.xml" value="0.27447916666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/register_activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/register_fragment_customer.xml" value="0.27447916666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/register_fragment_driver.xml" value="0.27447916666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/register_fragment_restaurant.xml" value="0.27447916666666666" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/restatant_fragment_food.xml" value="0.25" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_food.xml" value="0.264" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_search.xml" value="0.27447916666666666" />
         <entry key="..\:/Sliit/Y2/S2/MAD/MADproject/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.219" />
         <entry key="..\:/Sliit/Y2/S2/MAD/MADproject/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.219" />
         <entry key="..\:/Sliit/Y2/S2/MAD/MADproject/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.219" />
