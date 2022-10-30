@@ -7,6 +7,10 @@
         <entry key="..\:/FoodApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.257" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/activity_pending_orders.xml" value="0.25" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/customer_activity_buy_item.xml" value="0.2586050724637681" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/customer_activity_main.xml" value="0.2586050724637681" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/customer_fooditem.xml" value="0.2586050724637681" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/customer_fragment_cart.xml" value="0.2586050724637681" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/fragment_food.xml" value="0.11614583333333334" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/fragment_profile.xml" value="0.24561403508771928" />
@@ -14,58 +18,15 @@
         <entry key="..\:/FoodApp/app/src/main/res/layout/pending_orders.xml" value="0.15572916666666667" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/pending_orders_card.xml" value="0.2554347826086957" />
         <entry key="..\:/FoodApp/app/src/main/res/layout/pending_orders_card_view.xml" value="0.176" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_activity_main.xml" value="0.11614583333333334" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_home.xml" value="0.264" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_profile.xml" value="0.264" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_fragment_search.xml" value="0.176" />
+        <entry key="..\:/FoodApp/app/src/main/res/layout/restaurant_orders_card.xml" value="0.264" />
         <entry key="..\:/FoodApp/app/src/main/res/menu/bottom_nav_bar.xml" value="0.259375" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2555" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/loginRegister_secondary_btn.xml" value="0.2555" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/login_register_secondary_btn.xml" value="0.2555" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/register_btn.xml" value="0.2555" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/register_edt_background.xml" value="0.228" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/regtype_spinner.xml" value="0.228" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/selector_btn_outline.xml" value="0.2545" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/selector_btn_solid.xml" value="0.2545" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/style_btn_outline_secondary.xml" value="0.2" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/style_btn_solid_base.xml" value="0.2" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/style_btn_solid_dark.xml" value="0.2" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/style_btn_solid_secondary.xml" value="0.228" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/drawable/style_regtype_spinner.xml" value="0.228" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/activity_add.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/activity_add2.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/customer_activity_buy_item.xml" value="0.234375" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/customer_activity_main.xml" value="0.264" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/customer_fooditem.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/customer_fragment_cart.xml" value="0.264" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/customer_fragment_home.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/customer_fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/delivery_activity_main.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/delivery_fragment_home.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/delivery_fragment_home_displayitem.xml" value="0.16111111111111112" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/delivery_fragment_profile.xml" value="0.264" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/delivery_item.xml" value="0.6" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/delivery_orderitem.xml" value="0.4" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/list_restaurant.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/login_activity_main.xml" value="0.264" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/login_fragment_customer.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/login_fragment_driver.xml" value="0.2359375" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/register_activity_main.xml" value="0.264" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/register_activity_uploadimage.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/register_fragment_customer.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/register_fragment_driver.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/register_fragment_restaurant.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restatant_fragment_food.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_activity_addfood.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_activity_main.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_fooditem.xml" value="0.4" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_fragment_food.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_fragment_home.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/layout/restaurant_fragment_search.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/menu/customer_bottom_navbadr.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/menu/deliverer_bottom_navigation.xml" value="0.25" />
-        <entry key="..\:/Sliit/Y2/S2/MAD/MADProject/app/src/main/res/menu/restaurant_bottom_nav_bar.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

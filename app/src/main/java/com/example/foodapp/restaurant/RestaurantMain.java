@@ -1,4 +1,4 @@
-package com.example.foodapp;
+package com.example.foodapp.restaurant;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,16 +8,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.example.foodapp.databinding.ActivityMainBinding;
+import com.example.foodapp.R;
+import com.example.foodapp.databinding.RestaurantActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class RestaurantMain extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    RestaurantActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = RestaurantActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
@@ -29,22 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()){
 
-                case R.id.home:
+                case R.id.resNav_home:
                     actionBar.setTitle("Home");
                     replaceFragment(new HomeFragment());
                     break;
 
-                case R.id.search:
+                case R.id.resNav_search:
                     actionBar.setTitle("Search");
                     replaceFragment(new SearchFragment());
                     break;
 
-                case R.id.food:
+                case R.id.resNev_food:
                     actionBar.setTitle("Food");
                     replaceFragment(new FoodFragment());
                     break;
 
-                case R.id.profile:
+                case R.id.resNav_pulse:
                     actionBar.setTitle("Profile");
                     replaceFragment(new ProfileFragment());
                     break;

@@ -16,9 +16,6 @@
         android:theme="@style/Theme.FoodApp"
         tools:targetApi="31">
         <activity
-            android:name=".Pending_Orders"
-            android:exported="false" />
-        <activity
             android:name=".customer.DisplayReviewsCustomer"
             android:exported="false" />
         <activity
