@@ -25,6 +25,13 @@
             android:name=".customer.BuyItemActivity"
             android:exported="false" />
         <activity
+            android:name=".restaurant.Food_updat_MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".restaurant.FooditemMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".restaurant.FoodUploadImageActivity"
             android:exported="false" />
         <activity
