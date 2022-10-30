@@ -1,4 +1,4 @@
-package com.example.foodapp.accounts;
+package com.example.foodapp.classes;
 
 public class Foods {
 
@@ -7,7 +7,7 @@ public class Foods {
     public Foods() {
     }
 
-    public Foods(String name, String price) {
+    public Foods(String name, String price, String fid) {
         this.name = name;
         this.price = price;
     }
