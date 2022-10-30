@@ -12,8 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.foodapp.R;
+import com.example.foodapp.login.LoginMain;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,7 +29,7 @@ public class ProfileFragment extends Fragment {
     private String phone;
     private TextView fName, lName, email, mobile, address, pwd;
     FirebaseAuth firebaseAuth;
-    Button editProfile;
+    Button editProfile, btn_logout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,18 +60,15 @@ public class ProfileFragment extends Fragment {
         editProfile = view.findViewById(R.id.updateProfile);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(view.getContext(), EditProfile.class);
-                i.putExtra("firstName", fName.getText().toString());
-                i.putExtra("lastName", lName.getText().toString());
-                i.putExtra("email", email.getText().toString());
-                i.putExtra("mobile", mobile.getText().toString());
-                i.putExtra("address", address.getText().toString());
-                i.putExtra("password", pwd.getText().toString());
-                startActivity(i);
-            }
+        editProfile.setOnClickListener(view1 -> {
+            Intent i = new Intent(view1.getContext(), EditProfile.class);
+            i.putExtra("firstName", fName.getText().toString());
+            i.putExtra("lastName", lName.getText().toString());
+            i.putExtra("email", email.getText().toString());
+            i.putExtra("mobile", mobile.getText().toString());
+            i.putExtra("address", address.getText().toString());
+            i.putExtra("password", pwd.getText().toString());
+            startActivity(i);
         });
 
         dbRef = dbRef.child(firebaseAuth.getCurrentUser().getUid());

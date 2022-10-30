@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Restaurant;
+import com.example.foodapp.classes.Restaurant;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,66 +53,54 @@ public class WriteReview extends AppCompatActivity {
 
 
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        backBtn.setOnClickListener(view -> onBackPressed());
 
-                onBackPressed();
+        ratingStar.setOnRatingBarChangeListener((ratingBar, v, b) -> {
+
+
+            int rating = (int) v;
+            String message = null;
+
+            //display those messages based on the customer inputs
+            switch(rating) {
+                case 1:
+                    message = "Sorry to hear that!";
+                    break;
+
+                case 2:
+                    message = "You always accept suggestions!";
+                    break;
+
+                case 3:
+                    message = "Good enough!";
+                    break;
+
+                case 4:
+                    message = "Great! Thank you!";
+                    break;
+
+                case 5:
+                    message = "Awesome! You are the best";
+                    break;
             }
+
+            Toast.makeText(WriteReview.this, message, Toast.LENGTH_SHORT).show();
+
         });
 
-        ratingStar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-
-
-                int rating = (int) v;
-                String message = null;
-
-                //display those messages based on the customer inputs
-                switch(rating) {
-                    case 1:
-                        message = "Sorry to hear that!";
-                        break;
-
-                    case 2:
-                        message = "You always accept suggestions!";
-                        break;
-
-                    case 3:
-                        message = "Good enough!";
-                        break;
-
-                    case 4:
-                        message = "Great! Thank you!";
-                        break;
-
-                    case 5:
-                        message = "Awesome! You are the best";
-                        break;
-                }
-
-                Toast.makeText(WriteReview.this, message, Toast.LENGTH_SHORT).show();
-
+        btnSubmit.setOnClickListener(view -> {
+            if(TextUtils.isEmpty(txtReview.getText().toString())) {
+                txtReview.setError("Please enter a review about our app");
+                txtReview.requestFocus();
+                return;
             }
-        });
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(TextUtils.isEmpty(txtReview.getText().toString())) {
-                    txtReview.setError("Please enter a review about our app");
-                    txtReview.requestFocus();
-                    return;
-                }
-
-                Intent i = new Intent(WriteReview.this, CustomerMain.class);
-                startActivity(i);
-                InputData();
+            Intent i = new Intent(WriteReview.this, CustomerMain.class);
+            startActivity(i);
+            InputData();
 
 
 
-            }
         });
 
     }
@@ -124,19 +112,13 @@ public class WriteReview extends AppCompatActivity {
 
         //save review and rate details in the Admin reference
         dbRef =  FirebaseDatabase.getInstance().getReference("Admin");
-        dbRef.push().setValue(rev).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                //display this when review added to DB successfully
-                Toast.makeText(WriteReview.this, "Review Published successfully", Toast.LENGTH_SHORT).show();
+        dbRef.push().setValue(rev).addOnSuccessListener(aVoid -> {
+            //display this when review added to DB successfully
+            Toast.makeText(WriteReview.this, "Review Published successfully", Toast.LENGTH_SHORT).show();
 
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                //display this when review failed to added review to DB
-                Toast.makeText(WriteReview.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+        }).addOnFailureListener(e -> {
+            //display this when review failed to added review to DB
+            Toast.makeText(WriteReview.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
         });
 
     }

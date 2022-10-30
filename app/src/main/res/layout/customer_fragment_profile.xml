@@ -91,10 +91,12 @@
         android:layout_marginStart="37dp"
         android:layout_marginEnd="264dp"
         android:gravity="center"
-            android:textSize="25sp"android:layout_marginBottom="39dp"
+        android:textSize="25sp"
+        android:layout_marginBottom="39dp"
         android:text="@string/address"
         app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintEnd_toEndOf="parent"app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mobile" />
 
@@ -118,7 +120,7 @@
             android:id="@+id/updateProfile"
             android:layout_width="177dp"
             android:layout_height="62dp"
-            android:text="Update Profile"
+            android:text= "@string/btn_dri_update"
             android:textColor="#263238"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -140,7 +142,8 @@
             app:layout_constraintBottom_toTopOf="@+id/fname"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/profileimage"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

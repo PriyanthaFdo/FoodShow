@@ -44,7 +44,7 @@ public class RestaurantRegisterFragment extends Fragment {
         mobileNumber = view.findViewById(R.id.edt_reg_rest_mobile);
         password = view.findViewById(R.id.edt_reg_rest_password);
         confirmPassword = view.findViewById(R.id.edt_reg_rest_confirmPass);
-        btn_ToSignIn = view.findViewById(R.id.View);
+        btn_ToSignIn = view.findViewById(R.id.btn_toLogin);
         btn_register = view.findViewById(R.id.btn_ToSignIn);
         progressBar = requireActivity().findViewById(R.id.progressBar);
 
@@ -126,6 +126,8 @@ public class RestaurantRegisterFragment extends Fragment {
                     restaurant.setUid(firebaseAuth.getCurrentUser().getUid());
                     //store data in realtime database
                     DB.child(restaurant.getUid()).setValue(restaurant);
+
+                    firebaseAuth.signInWithEmailAndPassword(mail, pass);
 
                     Toast.makeText(getContext(), "Restaurant Account Created", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(view.getContext(), RestaurantMain.class));

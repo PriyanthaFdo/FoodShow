@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.foodapp.R;
-import com.example.foodapp.accounts.Customer;
+import com.example.foodapp.classes.Customer;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -65,45 +65,42 @@ public class EditProfile extends AppCompatActivity {
 
         Customer cus = new Customer();
 
-        savedata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        savedata.setOnClickListener(view -> {
 
 
 
 
-                String id = fAuth.getCurrentUser().getUid();
-                if(edtfname.getText().toString().isEmpty()||edtlname.getText().toString().isEmpty()||
-                edtmobile.getText().toString().isEmpty()||edtaddress.getText().toString().isEmpty()){
+            String id = fAuth.getCurrentUser().getUid();
+            if(edtfname.getText().toString().isEmpty()||edtlname.getText().toString().isEmpty()||
+            edtmobile.getText().toString().isEmpty()||edtaddress.getText().toString().isEmpty()){
 
-                    Toast.makeText(EditProfile.this, "Please, fill all the details", Toast.LENGTH_SHORT).show();
-
-                }
-
-                else{
-                    cus.setFirstName(edtfname.getText().toString().trim());
-                    cus.setLastName(edtlname.getText().toString().trim());
-                    cus.setMobile(edtmobile.getText().toString().trim());
-                    cus.setAddress(edtaddress.getText().toString().trim());
-
-                    dbRef.child(id).child("firstName").setValue(cus.getFirstName());
-                    dbRef.child(id).child("lastName").setValue(cus.getLastName());
-                    dbRef.child(id).child("mobile").setValue(cus.getMobile());
-                    dbRef.child(id).child("address").setValue(cus.getAddress());
-
-                    Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
-
-                    Intent i = new Intent(EditProfile.this, CustomerMain.class);
-                    startActivity(i);
-
-                }
-
-               // String emailDB = edtemail.getText().toString();
-
-
-
+                Toast.makeText(EditProfile.this, "Please, fill all the details", Toast.LENGTH_SHORT).show();
 
             }
+
+            else{
+                cus.setFirstName(edtfname.getText().toString().trim());
+                cus.setLastName(edtlname.getText().toString().trim());
+                cus.setMobile(edtmobile.getText().toString().trim());
+                cus.setAddress(edtaddress.getText().toString().trim());
+
+                dbRef.child(id).child("firstName").setValue(cus.getFirstName());
+                dbRef.child(id).child("lastName").setValue(cus.getLastName());
+                dbRef.child(id).child("mobile").setValue(cus.getMobile());
+                dbRef.child(id).child("address").setValue(cus.getAddress());
+
+                Toast.makeText(getApplicationContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(EditProfile.this, CustomerMain.class);
+                startActivity(i);
+
+            }
+
+           // String emailDB = edtemail.getText().toString();
+
+
+
+
         });
 
     }
