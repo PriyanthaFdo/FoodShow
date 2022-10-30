@@ -1,5 +1,7 @@
 package com.example.foodapp.deliverer;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -128,36 +130,31 @@ public class ProfileFragment extends Fragment {
             startActivity(new Intent(getContext(), LoginMain.class));
             getActivity().finish();
         });
-/*
+
         delete.setOnClickListener(v -> {
-            if(!deleteConfirm){
-                deleteConfirm = true;
-                delete.setText(R.string.confirm_delete);
-            }
-            else{
-                progressBar.setVisibility(View.VISIBLE);
-                getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                AuthCredential credential = EmailAuthProvider.getCredential(db.child("email").toString(), db.child("password").toString());
-                user.reauthenticate(credential).addOnCompleteListener(e -> {
-
-                    FirebaseAuth.getInstance().getCurrentUser().delete()
-                            .addOnSuccessListener(x -> {
-                                db.removeValue();
-                                Toast.makeText(getContext(), "Account permanently Deleted", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getContext(), LoginMain.class));
-                                getActivity().finish();
-
-                                progressBar.setVisibility(View.INVISIBLE);
-                                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                            }).addOnFailureListener(c -> {
-                                Toast.makeText(getContext(), "Error! "+c.getMessage(), Toast.LENGTH_LONG).show();
-                                deleteConfirm = null;
-                            });
+            AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+            dialog.setTitle("Delete Account?");
+            dialog.setMessage("Your account and all related information will be permanently deleted! This cannot be undone");
+            dialog.setPositiveButton("Delete", (dialogInterface, i) -> {
+               progressBar.setVisibility(View.VISIBLE);
+               getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                FirebaseAuth.getInstance().getCurrentUser().delete().addOnCompleteListener(e -> {
+                  progressBar.setVisibility(View.INVISIBLE);
+                  getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                  if(e.isSuccessful()){
+                      db.removeValue();
+                      Toast.makeText(getContext(), "Account Deleted!", Toast.LENGTH_SHORT).show();
+                  }else{
+                      Toast.makeText(getContext(), e.getException().getMessage(), Toast.LENGTH_LONG).show();
+                      FirebaseAuth.getInstance().signOut();
+                  }
+                    startActivity(new Intent(getContext(), LoginMain.class));
+                    getActivity().finish();
                 });
-            }
-        });*/
+            });
+            dialog.setNegativeButton("Dismiss", (dialogInterface, i) -> dialogInterface.dismiss());
+            AlertDialog alertDialog = dialog.create();
+            alertDialog.show();
+        });
     }
 }
