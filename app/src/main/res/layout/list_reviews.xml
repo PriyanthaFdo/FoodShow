@@ -6,25 +6,19 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="407dp"
-        android:layout_height="107dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="#FF5722"
         app:cardCornerRadius="10dp"
         app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/deleteBin"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="350dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/ic_baseline_delete_24" />
-
         <LinearLayout
-            android:layout_width="417dp"
-            android:layout_height="107dp"
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -56,6 +50,13 @@
                 android:text="TextView"
                 android:visibility="gone" />
 
+            <ImageView
+                android:id="@+id/deleteBin"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_baseline_delete_24" />
+
 
         </LinearLayout>
 
@@ -63,3 +64,5 @@
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--android:layout_marginEnd="32dp"
+    app:layout_constraintEnd_toStartOf="@+id/linearLayout5"-->
