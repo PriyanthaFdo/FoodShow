@@ -14,14 +14,16 @@
     <string name="lbl_regType">Account type</string>
     <string name="edt_firstName">First Name</string>
     <string name="edt_lastName">Last Name</string>
+    <string name="edt_name">Enter Name</string>
     <string name="edt_mail">Enter Email</string>
     <string name="edt_mobile">Enter mobile Number</string>
     <string name="edt_address">Enter Address</string>
     <string name="edt_password">Enter Password</string>
     <string name="edt_confirmPassword">Confirm Password</string>
+    <string name="confirm_delete">Confirm Delete Account</string>
     <string name="btn_register">Sign Up</string>
     <string name="btn_login">Sign In</string>
-
+    <string name="save">Save</string>
     <string name="nav_home">Home</string>
     <string name="nav_search">Search</string>
     <string name="nav_food">Food</string>
@@ -72,5 +74,7 @@
     <string name="Rate">RATE</string>
     <string name="reviewType">Write your REview</string>
     <string name="reviewbutton"><![CDATA[Rate & Review]]></string>
+    <string name="btn_dri_update" >Update</string>
+    <string name="del_acc">Delete Account</string>
 
 </resources>
